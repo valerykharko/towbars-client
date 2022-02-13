@@ -1,0 +1,27 @@
+.typeOfView {
+  display: flex;
+  .type {
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    img {
+      width: 28px;
+      opacity: 70%;
+    }
+  }
+
+  .typeActive {
+    padding: 7px;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    img {
+      width: 28px;
+      opacity: 100%;
+    }
+  }
+
+  div:nth-child(1) {
+    margin-right: 10px;
+  }
+}

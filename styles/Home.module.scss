@@ -1,0 +1,22 @@
+.mainBlock {
+  height: 470px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to top left, #e5e4e2, #a5a5a5);
+
+  .leftBlock {
+    margin: 30px 0 0 300px;
+    flex: 0 1 70%;
+
+    .mainText {
+      font-size: 24px;
+      font-weight: 500;
+      font-style: italic;
+      color: white;
+    }
+  }
+
+  .rightBlock {
+  }
+}

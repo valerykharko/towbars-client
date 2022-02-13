@@ -1,0 +1,23 @@
+.carouselBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 210px;
+  width: 100%;
+  background-color: #edefee;
+
+  span {
+    margin: 20px 0;
+    font-size: 18px;
+  }
+
+  .carousel {
+    width: 70%;
+
+    .carouselImages {
+      height: 100px;
+      width: 265px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.manufacturers {
+  margin-top: 25px;
+
+  .manufacturersTitle {
+    margin-bottom: 15px;
+    span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .listOf {
+    margin-left: 5px;
+    div {
+      margin-bottom: 12px;
+      span {
+        font-size: 16px;
+        font-weight: normal;
+      }
+      input {
+        margin-right: 17px;
+        transform: scale(1.4);
+        cursor: pointer;
+        color: #62d2a2;
+        background-color: #62d2a2;
+
+        [type="checkbox"]:checked {
+          color: #62d2a2;
+        }
+
+        &:checked {
+          color: #62d2a2;
+        }
+
+        &:focus {
+          color: #62d2a2;
+        }
+      }
+    }
+  }
+
+  .list {
+  }
+
+  .button {
+    display: inline-block;
+    padding: 5px 2px;
+    font-size: 15px;
+    color: blue;
+    cursor: pointer;
+  }
+}

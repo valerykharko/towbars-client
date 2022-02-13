@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  font-size: 14px;
+  font-family: Roboto, serif;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  border: none;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: lightgray;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+  border: 2px solid darkgray;
+}

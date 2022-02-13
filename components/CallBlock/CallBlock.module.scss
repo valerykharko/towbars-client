@@ -1,0 +1,76 @@
+.callBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .firstPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .lines {
+      height: 20px;
+      width: 20px;
+      margin-left: 10px;
+    }
+
+    .numberLink {
+      display: flex;
+      text-decoration: none;
+      color: black;
+
+      img {
+        width: 50px;
+      }
+
+      span {
+        display: block;
+        margin-top: 10px;
+        font-size: 22px;
+
+        &:hover {
+          text-shadow: 0 0 20px lightblue;
+          color: #0000d7;
+        }
+      }
+    }
+
+    .viberLink {
+      img {
+        width: 50px;
+
+        &:hover {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #00a3ff;
+    box-shadow: 0 0 2px 2px #0090eb;
+
+    &:hover {
+      box-shadow: 0 0 2px 2px #0060af;
+    }
+
+    img {
+      width: 18px;
+      margin-right: 10px;
+    }
+
+    span {
+      color: white;
+    }
+  }
+}

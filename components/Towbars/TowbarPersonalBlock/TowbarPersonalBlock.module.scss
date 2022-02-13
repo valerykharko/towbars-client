@@ -1,0 +1,315 @@
+.container {
+  padding: 20px 210px 200px 210px;
+  background-color: #f5f5f5;
+
+  .title {
+    margin-top: 20px;
+    h1 {
+      font-weight: bold;
+    }
+  }
+
+  .panel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+
+    .rate {
+      margin-right: 20px;
+    }
+
+    .other {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 20px;
+        margin-right: 5px;
+      }
+      span {
+        display: inline-block;
+        padding-top: 5px;
+        margin-right: 15px;
+        color: blue;
+      }
+    }
+  }
+
+  .mainBlock {
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+
+    .carousel {
+      flex: 0 1 25%;
+      width: 500px;
+      border-radius: 10px;
+
+      img {
+        border-radius: 10px;
+        width: 100%;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 0 1 30%;
+
+      .vendorCode {
+        display: flex;
+        span:nth-child(1) {
+          width: 170px;
+          font-size: 15px;
+        }
+        span:nth-child(2) {
+          width: 100px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .manufacturer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        .manufacturerInfo {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          font-size: 15px;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            width: 170px;
+
+            span:nth-child(2) {
+              margin-top: 10px;
+            }
+          }
+
+          div:nth-child(2) {
+            width: 100px;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+        .manufacturerImage {
+          margin-top: 20px;
+          img {
+            width: 260px;
+            height: 110px;
+          }
+        }
+      }
+
+      .toInfo {
+        margin-top: 10px;
+        cursor: pointer;
+        span {
+          color: #0000eb;
+
+          &:hover {
+            color: #0000cd;
+          }
+        }
+      }
+
+      .pdf {
+        margin-top: 40px;
+        img {
+          margin-right: 20px;
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .rightBlock {
+      flex: 0 1 30%;
+      .price {
+        height: 300px;
+        padding: 20px 30px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 0 4px 4px lightgrey;
+
+        .discount {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          cursor: pointer;
+          color: black;
+
+          img {
+            width: 24px;
+            margin-right: 5px;
+          }
+
+          &:hover {
+            color: blue;
+            font-style: italic;
+
+            img {
+              transform: rotate(10deg);
+            }
+          }
+        }
+
+        .notifications {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 25px;
+          cursor: pointer;
+          color: black;
+
+          img {
+            width: 24px;
+            margin-right: 5px;
+          }
+          &:hover {
+            color: blue;
+
+            img {
+              animation: bouncing 1s 0s infinite alternate;
+
+              @keyframes bouncing {
+                0% {
+                  transform: rotate(10deg);
+                }
+                50% {
+                  transform: rotate(0);
+                }
+                100% {
+                  transform: rotate(-10deg);
+                }
+              }
+            }
+          }
+        }
+
+        .priceCount {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 25px;
+          font-size: 30px;
+          font-weight: bold;
+
+          span:nth-child(2) {
+            margin-left: 15px;
+            color: gray;
+            font-size: 15px;
+          }
+        }
+
+        .isInStock {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          span {
+            font-size: 20px;
+          }
+          img {
+            margin-right: 5px;
+            width: 30px;
+          }
+        }
+
+        .addToCart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          button {
+            padding: 20px 30px;
+            border-radius: 5px;
+            background-color: blue;
+            box-shadow: 0 0 2px 2px #0000e1;
+            cursor: pointer;
+
+            span {
+              color: white;
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            &:hover {
+              box-shadow: 0 0 4px 4px #000087;
+            }
+          }
+        }
+      }
+
+      .questions {
+        margin-top: 35px;
+
+        div:nth-child(1) {
+          margin-bottom: 20px;
+          span {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+
+        div:nth-child(2) {
+          display: flex;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+
+            span {
+              display: inline-block;
+              margin-right: 15px;
+              margin-bottom: 10px;
+              color: blue;
+              font-size: 15px;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .afterMain {
+    .table {
+      margin-top: 20px;
+      h2 {
+        margin: 20px 0 20px 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+
+    .description {
+      margin-top: 40px;
+      h2 {
+        margin: 20px 0 20px 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .reviews {
+      margin-top: 40px;
+      h2 {
+        margin: 20px 0 20px 10px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+}

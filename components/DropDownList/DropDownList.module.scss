@@ -1,0 +1,37 @@
+.list {
+  position: absolute;
+  left: 458px;
+  top: 450px;
+  width: 350px;
+  background-color: #e1e1e1;
+  overflow-y: auto;
+  outline: 2px solid lightgrey;
+  z-index: 10;
+
+  .brand {
+    width: 100%;
+    padding: 5px 20px;
+    cursor: pointer;
+
+    span {
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: white;
+      background-color: rgba(75, 64, 255, 0.75);
+    }
+  }
+
+  &ForModel {
+    top: 493px;
+  }
+
+  &ForGeneration {
+    top: 536px;
+  }
+
+  &ForBodyStyle {
+    top: 579px;
+  }
+}

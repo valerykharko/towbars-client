@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .search {
+    margin-left: 50px;
+    input {
+      margin-right: 30px;
+      width: 150px;
+      height: 35px;
+      padding: 5px 10px;
+      border-radius: 3px;
+      outline: 2px solid cornflowerblue;
+    }
+
+    button {
+      margin-right: 15px;
+      padding: 5px 10px;
+      background-color: white;
+      box-shadow: 0 0 2px 2px lightblue;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 3px 3px lightblue;
+      }
+    }
+  }
+
+  .strainer {
+    margin-right: 100px;
+
+    button {
+      margin-right: 15px;
+      padding: 5px 10px;
+      background-color: white;
+      box-shadow: 0 0 2px 2px lightpink;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 3px 3px lightpink;
+      }
+    }
+  }
+
+  .filters {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+
+    div {
+      margin-right: 20px;
+      span {
+        display: inline-block;
+        width: 70px;
+      }
+      input {
+        width: 80px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 3px;
+        outline: 2px solid lightblue;
+      }
+    }
+  }
+}
+
+.autoSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  input {
+    margin-right: 30px;
+    width: 200px;
+    height: 35px;
+    padding: 5px 10px;
+    border-radius: 1px;
+    outline: 2px solid blue;
+  }
+
+  button {
+    margin-right: 15px;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: 0 0 2px 2px blueviolet;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 3px 3px blueviolet;
+    }
+  }
+}

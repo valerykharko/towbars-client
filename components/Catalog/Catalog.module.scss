@@ -1,0 +1,197 @@
+.container {
+  padding: 20px 210px 200px 210px;
+  background-color: #f5f5f5;
+
+  .link {
+    span {
+      font-size: 16px;
+      margin-right: 5px;
+      .ant-breadcrumb-separator {
+        width: 20px;
+      }
+    }
+    .text {
+      font-size: 18px;
+      margin-right: 0;
+    }
+  }
+
+  .mainBlock {
+    display: flex;
+    column-gap: 50px;
+    margin-top: 10px;
+
+    .leftBlock {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      flex: 0 1 15%;
+
+      .catalogTitle {
+        display: flex;
+        justify-content: center;
+        width: 250px;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          border-radius: 10px;
+          outline: 2px solid gray;
+          cursor: pointer;
+
+          &:hover {
+            outline: 2px solid #8496eb;
+          }
+
+          img {
+            width: 22px;
+            margin-right: 10px;
+          }
+
+          span {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .price {
+        margin-top: 20px;
+
+        .priceTitle {
+          margin-bottom: 15px;
+          span {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+        .inputs {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 15px;
+
+          .inputsItem {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 30px;
+            width: 100px;
+            padding: 5px 10px;
+            background-color: white;
+            border-radius: 5px;
+            outline: 2px solid lightgrey;
+
+            span {
+              color: gray;
+              font-weight: bold;
+              margin: 2px 6px 0 0;
+            }
+
+            input {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              width: 100%;
+              font-size: 15px;
+              font-weight: bold;
+
+              &:focus {
+                border: none;
+                outline: none;
+              }
+            }
+
+            &:hover {
+              outline: 2px solid #8496eb;
+            }
+          }
+        }
+      }
+
+      .IsBumperCutOut {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 50px;
+
+        span {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .isImage {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 50px;
+
+        span {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .searchButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+
+        button {
+          padding: 10px 40px;
+          border-radius: 7px;
+          background-color: #096dd9;
+          box-shadow: 0 0 2px 2px #098afa;
+          cursor: pointer;
+
+          span {
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.7px;
+          }
+
+          &:hover {
+            background-color: #0974e1;
+            box-shadow: 0 0 3px 3px #098afa;
+          }
+        }
+      }
+    }
+  }
+
+  .rightBlock {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 80%;
+
+    .searchBlock {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .totalCount {
+        span {
+          font-size: 16px;
+        }
+
+        span:nth-child(2) {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
