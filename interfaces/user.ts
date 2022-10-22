@@ -1,3 +1,11 @@
+interface IUserAuto {
+  brand: string;
+  model: string;
+  generation: string;
+  body_style: string;
+  img: [string];
+}
+
 export default interface IUser {
   id: number;
   firstName: string;
@@ -6,6 +14,8 @@ export default interface IUser {
   phoneNumber: string;
   isActivated: boolean;
   role: string;
+  autoId: number;
+  user_auto: IUserAuto;
 }
 
 export interface UserState {

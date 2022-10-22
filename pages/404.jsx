@@ -4,8 +4,8 @@ import Head from "next/head";
 import styles from "../styles/404Page.module.scss";
 
 const Page404 = () => {
-  const onButtonHandler = () => {
-    Router.push("/");
+  const onButtonHandler = async () => {
+    await Router.push("/");
   };
 
   return (

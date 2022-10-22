@@ -33,4 +33,26 @@ export default class AuthService {
       phoneNumber,
     });
   }
+
+  static async setUserAuto(
+    brand: string,
+    model: string,
+    generation: string,
+    body_style: string
+  ): Promise<AxiosResponse<IUser>> {
+    return $api.patch<IUser>("/auth/user/auto", {
+      brand,
+      model,
+      generation,
+      body_style,
+    });
+  }
+
+  static async removeUserAuto(): Promise<AxiosResponse<IUser>> {
+    return $api.patch<IUser>("/auth/user/auto/remove");
+  }
+
+  static async checkRefreshToken(): Promise<AxiosResponse<any>> {
+    return $api.get<any>("/auth/isValid");
+  }
 }

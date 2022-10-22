@@ -8,11 +8,13 @@ import styles from "./DropDownList.module.scss";
 interface DropDownListProps {
   position: number;
   setActiveDropDownList: Function;
+  location?: boolean;
 }
 
 const DropDownList = ({
   position,
   setActiveDropDownList,
+  location,
 }: DropDownListProps) => {
   const {
     brandValue,
@@ -66,13 +68,21 @@ const DropDownList = ({
     <div
       className={
         position === 1
-          ? styles.list
+          ? location
+            ? styles.listP
+            : styles.list
           : position === 2
-          ? [styles.list, styles.listForModel].join(" ")
+          ? location
+            ? [styles.listP, styles.listPForModel].join(" ")
+            : [styles.list, styles.listForModel].join(" ")
           : position === 3
-          ? [styles.list, styles.listForGeneration].join(" ")
+          ? location
+            ? [styles.listP, styles.listPForGeneration].join(" ")
+            : [styles.list, styles.listForGeneration].join(" ")
           : position === 4
-          ? [styles.list, styles.listForBodyStyle].join(" ")
+          ? location
+            ? [styles.listP, styles.listPForBodyStyle].join(" ")
+            : [styles.list, styles.listForBodyStyle].join(" ")
           : ""
       }
     >

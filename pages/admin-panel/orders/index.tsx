@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import AdminOrders from "components/AdminPanel/Orders/AdminOrders";
+import { AdminOrders } from "components";
 
 const AdminOrdersPage = () => {
   return (

@@ -17,7 +17,7 @@ const LoginForm = () => {
 
   const onFinish = async (values: { email: string; password: string }) => {
     await Promise.all([login(values.email, values.password)]);
-    localStorage.getItem("token") && Router.push("/");
+    localStorage.getItem("token") && (await Router.push("/"));
   };
 
   return (

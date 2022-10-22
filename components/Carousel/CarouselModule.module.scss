@@ -16,8 +16,11 @@
     width: 70%;
 
     .carouselImages {
-      height: 100px;
-      width: 265px;
+      cursor: pointer;
+      img {
+        height: 100px;
+        width: 265px;
+      }
     }
   }
 }

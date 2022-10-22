@@ -67,28 +67,39 @@
 
 .autoSearch {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 
-  input {
-    margin-right: 30px;
-    width: 200px;
-    height: 35px;
-    padding: 5px 10px;
-    border-radius: 1px;
-    outline: 2px solid blue;
+  .search {
+    margin-left: 50px;
+    input {
+      margin-right: 30px;
+      width: 200px;
+      height: 35px;
+      padding: 5px 10px;
+      border-radius: 1px;
+      outline: 2px solid blue;
+    }
+
+    button {
+      margin-right: 15px;
+      padding: 5px 10px;
+      background-color: white;
+      box-shadow: 0 0 2px 2px blueviolet;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 3px 3px blueviolet;
+      }
+    }
   }
 
-  button {
-    margin-right: 15px;
-    padding: 5px 10px;
-    background-color: white;
-    box-shadow: 0 0 2px 2px blueviolet;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 0 3px 3px blueviolet;
-    }
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 20%;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }

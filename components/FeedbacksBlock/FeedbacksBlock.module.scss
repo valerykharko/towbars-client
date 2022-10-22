@@ -1,0 +1,112 @@
+.wrapper {
+  padding: 20px 200px 0 200px;
+  background-color: #f5f5f5;
+
+  .container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+
+    .review {
+      padding: 25px;
+
+      &__header {
+        display: flex;
+
+        &__left {
+          flex: 0 1 40%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          &Image {
+            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            border: 1px solid lightgray;
+
+            img {
+              width: 100px;
+              height: 100px;
+              border-radius: 100%;
+            }
+          }
+
+          &Text {
+            h3 {
+              font-size: 18px;
+            }
+          }
+        }
+
+        &__center {
+          flex: 0 1 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+
+        &__right {
+          flex: 0 1 20%;
+          display: flex;
+          justify-content: flex-end;
+          align-content: flex-end;
+
+          div {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            background: rgba(255, 255, 0, 0.71);
+
+            font-weight: bold;
+            font-size: 18px;
+          }
+        }
+      }
+
+      &__info {
+        display: flex;
+        padding: 10px 40px;
+
+        &Text {
+          padding-left: 250px;
+          margin-top: 15px;
+          flex: 0 1 70%;
+          display: flex;
+          justify-content: center;
+          text-align: justify;
+          font-size: 16px;
+          line-height: 1.2;
+        }
+
+        &Image {
+          flex: 0 1 30%;
+
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          img {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+
+  .tip {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-style: italic;
+  }
+}

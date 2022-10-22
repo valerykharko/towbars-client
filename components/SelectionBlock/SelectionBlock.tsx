@@ -5,8 +5,19 @@ import { useTypedSelector } from "hooks/useTypedSelector";
 import { useActions } from "hooks/useActions";
 
 import styles from "./SelectionBlock.module.scss";
+import { setUserAuto } from "store/actions/userActions";
 
-const SelectionBlock = () => {
+interface SelectionBlockProps {
+  text?: string;
+  textButton?: string;
+  location?: boolean;
+}
+
+const SelectionBlock = ({
+  text,
+  textButton,
+  location,
+}: SelectionBlockProps) => {
   const [dropDownList, setActiveDropDownList] = useState(false);
   const [position, setPosition] = useState(1);
 
@@ -23,8 +34,12 @@ const SelectionBlock = () => {
     bodyStyleActive,
   } = useTypedSelector((state) => state.car);
 
-  const { setModelActive, setGenerationActive, setBodyStyleActive } =
-    useActions();
+  const {
+    setModelActive,
+    setGenerationActive,
+    setBodyStyleActive,
+    setUserAuto,
+  } = useActions();
 
   const handleOutSideClick = (event: any) => {
     if (dropDownList) {
@@ -48,15 +63,30 @@ const SelectionBlock = () => {
     document.body.addEventListener("mousedown", handleOutSideClick);
   }, [brandValue, modelValue, generationValue, bodyStyleValue]);
 
+  const onButtonClick = () => {
+    brandValue &&
+    modelValue &&
+    generationValue &&
+    bodyStyleValue &&
+    textButton === "Выбрать"
+      ? setUserAuto(
+          brandValue?.name,
+          modelValue?.name,
+          generationValue?.name,
+          bodyStyleValue?.name
+        )
+      : Router.push("/catalog");
+  };
+
   return (
     <div className={styles.selectionBlock}>
       <div className={styles.header}>
         <span className={styles.selectionText}>
-          Подберите фаркопы прямо сейчас
+          {text ? text : "Подберите фаркопы прямо сейчас"}
         </span>
         <img
           className={styles.selectIcon}
-          src="static/images/select.png"
+          src="/static/images/select.png"
           alt="select-icon"
         />
       </div>
@@ -114,6 +144,7 @@ const SelectionBlock = () => {
             <DropDownList
               position={position}
               setActiveDropDownList={setActiveDropDownList}
+              location={location}
             />
           ) : (
             ""
@@ -122,12 +153,12 @@ const SelectionBlock = () => {
       </div>
       <div className={styles.mainButton}>
         <button
-          onClick={() => Router.push("/catalog")}
+          onClick={onButtonClick}
           disabled={
             !(brandActive && modelActive && generationActive && bodyStyleValue)
           }
         >
-          Подобрать
+          {textButton ? textButton : "Подобрать"}
         </button>
       </div>
     </div>

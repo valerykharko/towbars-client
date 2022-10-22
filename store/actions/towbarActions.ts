@@ -26,7 +26,7 @@ export const fetchTowbars = (
   };
 };
 
-export function setCurrentPage(value: number): TowbarAction {
+export function setCurrentPageT(value: number): TowbarAction {
   return { type: TowbarActionsTypes.SET_CURRENT_PAGE, payload: value };
 }
 

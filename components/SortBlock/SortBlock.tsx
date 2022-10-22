@@ -7,11 +7,11 @@ import styles from "./SortBlock.module.scss";
 
 const SortBlock = () => {
   const sortItems = [
-    { name: "Популярные" },
-    { name: "Новые" },
+    // { name: "Популярные" },
+    // { name: "Новые" },
+    { name: "По рейтингу" },
     { name: "Сначала дешевые" },
     { name: "Сначала дорогие" },
-    { name: "По рейтингу" },
   ];
   const [visiblePopup, setVisiblePopup] = useState(false);
 
@@ -52,20 +52,18 @@ const SortBlock = () => {
       </div>
       {visiblePopup && (
         <div className={styles.sortPopup}>
-          <ul>
-            {sortItems &&
-              sortItems.map((obj) => (
-                <li
-                  className={
-                    sortValue === obj.name ? styles.activeSort : styles.sort
-                  }
-                  onClick={() => onSelectItem(obj.name)}
-                  key={obj.name}
-                >
-                  {obj.name}
-                </li>
-              ))}
-          </ul>
+          {sortItems &&
+            sortItems.map((obj) => (
+              <div
+                className={
+                  sortValue === obj.name ? styles.activeSort : styles.sort
+                }
+                onClick={() => onSelectItem(obj.name)}
+                key={obj.name}
+              >
+                {obj.name}
+              </div>
+            ))}
         </div>
       )}
     </div>

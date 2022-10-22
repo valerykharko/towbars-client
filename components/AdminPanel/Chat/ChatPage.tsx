@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer } from "react";
 import { Chat, JoinBlock, MenuAdmin } from "components";
-
-import styles from "./ChatPage.module.scss";
-import axios from "axios";
+import $api from "http/index";
 import reducer from "utils/sockets/reducer";
 import socket from "utils/sockets/socket";
+
+import styles from "./ChatPage.module.scss";
 
 const ChatPage = () => {
   const [state, dispatch] = useReducer(reducer, {
@@ -21,7 +21,7 @@ const ChatPage = () => {
       payload: obj,
     });
     socket.emit("ROOM:JOIN", obj);
-    const { data } = await axios.get(
+    const { data } = await $api.get(
       `${process.env.API_URL}/api/sockets/rooms/${obj.roomId}`
     );
     dispatch({

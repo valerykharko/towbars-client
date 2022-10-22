@@ -1,0 +1,31 @@
+.favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    span {
+      font-weight: bold;
+      color: #0000cd;
+    }
+  }
+
+  &__yep {
+    span {
+      font-weight: bold;
+      color: #0000cd;
+    }
+    &:hover {
+      span {
+        font-weight: normal;
+        color: blue;
+      }
+    }
+  }
+
+  &__nope {
+  }
+}

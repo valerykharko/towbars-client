@@ -1,0 +1,47 @@
+.charts {
+  flex: 0 1 50%;
+
+  &__filter {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 15px 0;
+
+    &Types {
+      margin-left: 15px;
+
+      &__button {
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: transparent;
+
+        :hover {
+          border-radius: 3px;
+          box-shadow: 0 0 2px 2px lightgray;
+        }
+
+        img {
+          width: 40px;
+          padding: 5px;
+          opacity: 80%;
+        }
+      }
+
+      &__buttonActive {
+        margin-right: 10px;
+        background-color: azure;
+        cursor: pointer;
+
+        img {
+          width: 40px;
+          padding: 4px;
+          box-shadow: 0 0 2px 2px lightgray;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  &__block {
+    width: 650px;
+  }
+}

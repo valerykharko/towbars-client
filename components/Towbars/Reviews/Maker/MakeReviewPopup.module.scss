@@ -1,0 +1,57 @@
+.maker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    display: flex;
+    padding-top: 1px;
+    color: blue;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+      span {
+        font-weight: bold;
+        color: #0000cd;
+      }
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .ant-modal-content {
+    .title {
+      display: flex;
+
+      span {
+        font-size: 16px;
+      }
+      textarea {
+        border: none;
+      }
+    }
+
+    .text {
+      display: flex;
+
+      span {
+        font-size: 16px;
+      }
+      textarea {
+        border: none;
+      }
+    }
+
+    .rating {
+      display: flex;
+
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}

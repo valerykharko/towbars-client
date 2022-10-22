@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 150px;
+  width: 180px;
   padding: 10px 10px 10px 15px;
   border-radius: 7px;
   outline: 2px solid lightgrey;
@@ -20,12 +20,32 @@
 
 .sortPopup {
   position: absolute;
-  outline: 1px solid black;
+  margin-top: 10px;
+  width: 180px;
   background-color: white;
+  border-radius: 2px;
+  outline: 3px solid lightgrey;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 
   .sort {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: whitesmoke;
+    }
   }
 
   .activeSort {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background: lightgray;
   }
 }

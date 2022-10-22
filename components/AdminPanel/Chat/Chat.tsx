@@ -50,7 +50,6 @@ const Chat = ({ users, messages, userName, roomId, onAddMessage }: any) => {
           <textarea
             value={messageValue}
             onChange={(e) => setMessageValue(e.target.value)}
-            className={styles.form}
             rows={3}
           />
           <button

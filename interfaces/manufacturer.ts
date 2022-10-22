@@ -5,6 +5,8 @@ export interface IManufacturer {
   img: [string];
   doc: [string];
   description: string;
+  text: string;
+  link: string;
 }
 
 export interface ManufacturerState {

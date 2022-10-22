@@ -14,20 +14,21 @@ import FirstStep from "components/MakeOrder/FirstStep";
 import SecondStep from "components/MakeOrder/SecondStep";
 
 import styles from "./MakeOrder.module.scss";
+import Router from "next/router";
 
 const steps = [
   {
-    title: "Verification",
+    title: "Верификация",
     content: <FirstStep />,
     icon: <SolutionOutlined />,
   },
   {
-    title: "Pay",
+    title: "Оплата",
     content: <SecondStep />,
     icon: <LoadingOutlined />,
   },
   {
-    title: "Done",
+    title: "Готово",
     content: <LastStep />,
     icon: <SmileOutlined />,
   },
@@ -61,7 +62,7 @@ const MakeOrder = () => {
       <div className="steps-action" style={{ marginBottom: 260 }}>
         {current < steps.length - 1 && (
           <Button type="primary" onClick={() => next()}>
-            Next
+            Далее
           </Button>
         )}
         {current === steps.length - 1 && (
@@ -72,7 +73,7 @@ const MakeOrder = () => {
                 .loading("Оплата заказ в процессе...", 2.5)
                 .then(() => message.success("Оплата заказа завершена", 2.5))
                 .then(() => message.info("Ваш заказ оплачен", 1.5))
-                .then(() => {
+                .then(async () => {
                   if (
                     user?.firstName &&
                     user?.secondName &&
@@ -87,16 +88,16 @@ const MakeOrder = () => {
                       totalCount
                     );
                   }
-                  // Router.push("/");
+                  await Router.push("/");
                 })
             }
           >
-            Done
+            Завершить
           </Button>
         )}
         {current > 0 && (
           <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
-            Previous
+            Назад
           </Button>
         )}
       </div>

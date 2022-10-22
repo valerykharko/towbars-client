@@ -1,80 +1,72 @@
-import React from "react";
-import { Avatar, List, Space } from "antd";
-import { LikeOutlined, MessageOutlined, StarOutlined } from "@ant-design/icons";
+import React, { useEffect } from "react";
+import { ReviewsPages } from "components";
+import { useTypedSelector } from "hooks/useTypedSelector";
+import { useActions } from "hooks/useActions";
+import { ITowbar } from "interfaces/towbar";
 
-const TowbarsReviewsModule = () => {
-  const listData = [];
-  for (let i = 0; i < 23; i++) {
-    listData.push({
-      href: "https://ant.design",
-      title: `ant design part ${i}`,
-      avatar: "https://joeschmoe.io/api/v1/random",
-      description:
-        "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-      content:
-        "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
-    });
-  }
+import styles from "./TowbarsReviews.module.scss";
 
-  const IconText = ({ icon, text }: any) => (
-    <Space>
-      {React.createElement(icon)}
-      {text}
-    </Space>
+interface TowbarsReviewsModuleProps {
+  towbar: ITowbar;
+}
+
+const TowbarsReviewsModule = ({ towbar }: TowbarsReviewsModuleProps) => {
+  const { ratings_by_towbar, pageT, limitT } = useTypedSelector(
+    (state) => state.rating
   );
+  const { user } = useTypedSelector((state) => state.user);
+
+  const { fetchRatingsByTowbar, fetchIsUserRating } = useActions();
+
+  useEffect(() => {
+    towbar && fetchRatingsByTowbar(towbar.id, pageT, limitT);
+    towbar && user && fetchIsUserRating(towbar.id);
+  }, [towbar, user]);
+
   return (
-    <List
-      itemLayout="vertical"
-      size="large"
-      pagination={{
-        onChange: (page) => {
-          console.log(page);
-        },
-        pageSize: 3,
-      }}
-      dataSource={listData}
-      footer={
-        <div>
-          <b>ant design</b> footer part
-        </div>
-      }
-      renderItem={(item) => (
-        <List.Item
-          key={item.title}
-          actions={[
-            <IconText
-              icon={StarOutlined}
-              text="156"
-              key="list-vertical-star-o"
-            />,
-            <IconText
-              icon={LikeOutlined}
-              text="156"
-              key="list-vertical-like-o"
-            />,
-            <IconText
-              icon={MessageOutlined}
-              text="2"
-              key="list-vertical-message"
-            />,
-          ]}
-          extra={
-            <img
-              width={272}
-              alt="logo"
-              src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-            />
-          }
-        >
-          <List.Item.Meta
-            avatar={<Avatar src={item.avatar} />}
-            title={<a href={item.href}>{item.title}</a>}
-            description={item.description}
-          />
-          {item.content}
-        </List.Item>
+    <div className={styles.wrapper}>
+      {ratings_by_towbar.length > 0 ? (
+        <>
+          <div className={styles.container}>
+            {ratings_by_towbar.map((item) => (
+              <div key={item.date} className={styles.review}>
+                <div className={styles.review__header}>
+                  <div className={styles.review__header__left}>
+                    <div className={styles.review__header__leftImage}>
+                      <img src="/static/images/man.png" alt="user-icon" />
+                    </div>
+                    <div className={styles.review__header__leftUser}>
+                      <h3>
+                        {item.user.secondName} {item.user.firstName}
+                      </h3>
+                      <span>{item.date.split("T")[0]}</span>
+                    </div>
+                  </div>
+                  <div className={styles.review__header__center}>
+                    <h3>{item.title}</h3>
+                  </div>
+                  <div className={styles.review__header__right}>
+                    <div>{item.value}</div>
+                  </div>
+                </div>
+                <div className={styles.review__info}>
+                  <div className={styles.review__infoText}>{item.text}</div>
+                  <div className={styles.review__infoImage}>
+                    <img
+                      src={process.env.API_URL! + "/" + item?.img[0]}
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <ReviewsPages />
+        </>
+      ) : (
+        <div className={styles.tip}>Будьте первым, кто добавит отзыв! :)</div>
       )}
-    />
+    </div>
   );
 };
 

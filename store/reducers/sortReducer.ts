@@ -1,7 +1,7 @@
 import { SortAction, SortActionsTypes, SortState } from "interfaces/sort";
 
 const initialState: SortState = {
-  sortValue: "Популярное",
+  sortValue: "По рейтингу",
 };
 
 export const sortReducer = (

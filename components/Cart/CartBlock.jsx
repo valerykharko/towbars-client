@@ -18,7 +18,6 @@ const CartBlock = () => {
     useActions();
 
   const cartTowbars = Object.keys(items).map((key) => {
-    // @ts-ignore
     return items[key].items[0];
   });
 
@@ -91,10 +90,19 @@ const CartBlock = () => {
                     />
                   </div>
                   <div className={styles.info}>
-                    <span>Фаркоп {item.vendor_code}</span>
-                    <span>
-                      Нагрузка: {item.max_hor}/{item.max_ver}
-                    </span>
+                    {item.pin ? (
+                      <>
+                        <span>Штатная электрика {item.vendor_code}</span>
+                        <span>pin: {item.pin} пин</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Фаркоп {item.vendor_code}</span>
+                        <span>
+                          Нагрузка: {item.max_hor}/{item.max_ver}
+                        </span>
+                      </>
+                    )}
                   </div>
                   <div
                     className={styles.remove}
@@ -109,7 +117,7 @@ const CartBlock = () => {
                     className={styles.add}
                     onClick={() => onPlusItem(item.id)}
                   >
-                    <img src="/static/images/add.png" alt="add-icon" />
+                    <img src="/static/images/cart/add.png" alt="add-icon" />
                   </div>
                   <div className={styles.totalPriceOf}>
                     <span>{items[item.id].totalPrice} BYN</span>
@@ -128,10 +136,12 @@ const CartBlock = () => {
           </div>
         ) : (
           <Empty
+            description="Нет данных"
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              fontSize: "16px",
               flex: "0 1 64%",
               width: 500,
             }}

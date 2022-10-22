@@ -17,7 +17,7 @@ import {
 import styles from "./Menu.module.scss";
 
 const MenuAdmin = () => {
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(true);
 
   const toggleCollapsed = () => {
     setState(!state);
@@ -57,9 +57,10 @@ const MenuAdmin = () => {
               ? "6"
               : router.asPath === "/admin-panel/db/statistics"
               ? "9"
+              : router.asPath === "/admin-panel/statistics"
+              ? "sub3"
               : "1",
           ]}
-          defaultOpenKeys={["sub1"]}
           mode="inline"
           theme="light"
           inlineCollapsed={state}
@@ -118,20 +119,21 @@ const MenuAdmin = () => {
             icon={<AppstoreOutlined style={{ fontSize: "18px" }} />}
             title="Статистика"
           >
-            <SubMenu
-              key="sub3"
-              title="По заказам"
-              icon={<PieChartFilled style={{ fontSize: "20px" }} />}
-            >
+            {/*<SubMenu*/}
+            {/*  key="sub3"*/}
+            {/*  title="По заказам"*/}
+            {/*  icon={<PieChartFilled style={{ fontSize: "20px" }} />}*/}
+            {/*>*/}
               <Menu.Item
                 key="9"
                 onClick={() => router.push("/admin-panel/statistics")}
+                icon={<PieChartFilled style={{ fontSize: "20px" }} />}
               >
-                фаркопов
+                По заказам
               </Menu.Item>
-              <Menu.Item key="10">электрики</Menu.Item>
-              <Menu.Item key="11">аксессуаров</Menu.Item>
-            </SubMenu>
+              {/*<Menu.Item key="10">электрики</Menu.Item>*/}
+              {/*<Menu.Item key="11">аксессуаров</Menu.Item>*/}
+            {/*</SubMenu>*/}
           </SubMenu>
         </Menu>
       </div>

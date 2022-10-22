@@ -16,7 +16,7 @@ const SecondStep = () => {
   const [typeOfPay, setTypeOfPay] = useState(1);
 
   const onSubmit = async (values: any) => {
-    console.log(values);
+    // console.log(values);
   };
 
   return (

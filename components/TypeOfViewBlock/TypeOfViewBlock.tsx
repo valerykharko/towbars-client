@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "./TypeOfViewBlock.module.scss";
 
-const TypeOfViewBlock = () => {
-  const [activeType, setActiveType] = useState(1);
+interface TypeOfViewBlockProps {
+  activeType: number;
+  setActiveType: Function;
+}
 
+const TypeOfViewBlock = ({
+  activeType,
+  setActiveType,
+}: TypeOfViewBlockProps) => {
   return (
     <div className={styles.typeOfView}>
       <div

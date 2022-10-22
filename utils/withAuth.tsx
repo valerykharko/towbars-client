@@ -1,17 +1,15 @@
 import React from "react";
-import { useRouter } from "next/router";
+import Router from "next/router";
 
 const withAuth = (WrappedComponent: any) => {
-  return (props: any) => {
+  return async (props: any) => {
     // checks whether we are on client / browser or server.
     if (typeof window !== "undefined") {
-      const Router = useRouter();
-
       const token = localStorage.getItem("token");
 
       // If there is no access token we redirect to "/" page.
       if (!token) {
-        Router.replace("/");
+        await Router.push("/");
         return null;
       }
 

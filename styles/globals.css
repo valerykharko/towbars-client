@@ -34,3 +34,14 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
   border: 2px solid darkgray;
 }
+
+textarea {
+  padding: 5px;
+  border: 1px solid lightgray;
+}
+
+textarea:focus,
+textarea:active {
+  outline: none;
+  border: 1px solid lightgray !important;
+}

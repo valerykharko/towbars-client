@@ -5,6 +5,7 @@ export default interface IOrder {
   phoneNumber: string;
   items: any;
   date: string;
+  status: string;
   totalPrice: number;
   totalCount: number;
 }

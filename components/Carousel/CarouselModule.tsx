@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import Router from "next/router";
+
 import Carousel from "react-multi-carousel";
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { useActions } from "hooks/useActions";
@@ -48,9 +50,12 @@ const CarouselModule = () => {
           {manufacturers
             .filter((elem) => elem?.img !== null)
             .map((elem) => (
-              <div key={elem.id}>
+              <div
+                className={styles.carouselImages}
+                key={elem.id}
+                onClick={() => Router.push(`/manufacturers/${elem.name}`)}
+              >
                 <img
-                  className={styles.carouselImages}
                   src={process.env.API_URL! + "/" + elem?.img[0]}
                   alt="manufacturer-logo"
                 />

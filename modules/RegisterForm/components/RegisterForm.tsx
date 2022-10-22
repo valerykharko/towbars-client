@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Button, Form, Input } from "antd";
-import { LockOutlined, MailOutlined, UnlockOutlined } from "@ant-design/icons";
+import { LockOutlined, MailOutlined } from "@ant-design/icons";
 
 import styles from "./RegisterForm.module.scss";
 import { useActions } from "hooks/useActions";
@@ -15,7 +15,7 @@ const RegisterForm = () => {
 
   const onFinish = async (values: { email: string; password: string }) => {
     await Promise.all([registration(values.email, values.password)]);
-    localStorage.getItem("token") && Router.push("/");
+    localStorage.getItem("token") && (await Router.push("/"));
   };
 
   return (
@@ -51,7 +51,12 @@ const RegisterForm = () => {
                 name="password"
                 className={styles.formItem}
                 rules={[
-                  { required: true, message: "Please input your Password!" },
+                  {
+                    required: true,
+                    message: "Введите Ваш пароль (от 3 до 32 символов)",
+                    max: 32,
+                    min: 3,
+                  },
                 ]}
               >
                 <Input

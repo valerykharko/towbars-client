@@ -1,0 +1,128 @@
+.container {
+  min-height: calc(100vh - 350px);
+  padding: 40px 210px 100px 210px;
+  background-color: #f5f5f5;
+
+  .header {
+    h1 {
+      font-weight: bold;
+    }
+  }
+
+  .info {
+    margin-top: 15px;
+
+    span:nth-child(1) {
+      font-size: 20px;
+      font-style: italic;
+    }
+    span:nth-child(2) {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+    span:nth-child(3) {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    margin-top: 20px;
+
+    .price {
+      .top {
+        span {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        ul {
+          margin-left: 20px;
+          margin-top: 12px;
+          li {
+            margin-top: 7px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .bottom {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        span {
+          font-size: 18px;
+          text-align: justify;
+          line-height: 1.2;
+        }
+
+        span:nth-child(2),
+        span:nth-child(3) {
+          margin-top: 20px;
+          font-size: 18px;
+          text-align: justify;
+          line-height: 1.2;
+        }
+
+        span:last-child {
+          margin-top: 15px;
+          font-size: 14px;
+          font-style: italic;
+        }
+      }
+    }
+
+    .right {
+      .workTime {
+        div:nth-child(1) {
+          span {
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+        div:nth-child(2) {
+          margin-top: 12px;
+          span {
+            margin-top: 7px;
+            display: block;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .map {
+        margin-top: 20px;
+        .address {
+          width: 87%;
+          margin-top: 10px;
+
+          span:nth-child(1) {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          span:nth-child(2) {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+          }
+
+          span:last-child {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ import {
   TowbarsBlock,
   TowbarPages,
   ModalDialogs,
+  WiringKitsBlock,
+  WiringKitPages,
 } from "components";
 
 import styles from "./Catalog.module.scss";
@@ -17,9 +19,12 @@ import { useActions } from "hooks/useActions";
 
 const Catalog = () => {
   const [active, setActive] = useState<boolean>(true);
+  const [activePanel, setActivePanel] = useState("/catalog");
 
   const [value, setValue] = useState<[number, number]>([0, 1000]);
   const [isBumperCutOut, setIsBumperCutOut] = useState<boolean>(false);
+
+  const [activeType, setActiveType] = useState(2);
 
   const onChangeSlider = (value: [number, number]) => {
     setValue(value);
@@ -33,14 +38,21 @@ const Catalog = () => {
     useTypedSelector((state) => state.car);
 
   const { page, limit, totalCount } = useTypedSelector((state) => state.towbar);
+  const {
+    page: pageWK,
+    limit: limitWK,
+    totalCount: totalCountWK,
+  } = useTypedSelector((state) => state.wiringKit);
   const { stateToFind } = useTypedSelector((state) => state.manufacturer);
+  const { sortValue } = useTypedSelector((state) => state.sort);
 
-  const { fetchCar, fetchTowbars } = useActions();
+  const { fetchCar, fetchTowbars, fetchWiringKits } = useActions();
 
   const options = {
     price: value,
     manufacturers: stateToFind,
     isBumperCutOut: isBumperCutOut,
+    sortValue: sortValue,
   };
 
   useEffect(() => {
@@ -58,7 +70,8 @@ const Catalog = () => {
       );
     }
     fetchTowbars(car?.id!, page, limit, options);
-  }, [car?.id, page]);
+    fetchWiringKits(car?.id!, pageWK, limitWK, options);
+  }, [car?.id, page, sortValue]);
 
   return (
     <div className={styles.container}>
@@ -73,7 +86,12 @@ const Catalog = () => {
               <span>Категории</span>
             </button>
           </div>
-          {active && <CatalogMenu />}
+          {active && (
+            <CatalogMenu
+              activePanel={activePanel}
+              setActivePanel={setActivePanel}
+            />
+          )}
           <div className={styles.price}>
             <div className={styles.priceTitle}>
               <span>Цена</span>
@@ -109,26 +127,54 @@ const Catalog = () => {
           {/*</div>*/}
           <div className={styles.searchButton}>
             <button
-              onClick={() => fetchTowbars(car?.id!, page, limit, options)}
+              onClick={() => {
+                fetchTowbars(car?.id!, page, limit, options);
+                fetchWiringKits(car?.id!, pageWK, limitWK, options);
+              }}
             >
               <span>Поиск</span>
             </button>
           </div>
         </div>
         <div className={styles.rightBlock}>
-          <div className={styles.searchBlock}>
-            <ModalDialogs />
-          </div>
-          <div className={styles.filters}>
-            <div className={styles.totalCount}>
-              <span>Товаров: </span>
-              <span>{totalCount}</span>
-            </div>
-            <SortBlock />
-            <TypeOfViewBlock />
-          </div>
-          <TowbarsBlock />
-          <TowbarPages />
+          {/*<div className={styles.searchBlock}>*/}
+          {/*  <ModalDialogs />*/}
+          {/*</div>*/}
+          {activePanel === "/catalog/accessories" ? (
+            <div></div>
+          ) : activePanel === "/catalog/electrics" ? (
+            <>
+              <div className={styles.filters}>
+                <div className={styles.totalCount}>
+                  <span>Товаров: </span>
+                  <span>{totalCountWK}</span>
+                </div>
+                <SortBlock />
+                {/*<TypeOfViewBlock*/}
+                {/*  activeType={activeType}*/}
+                {/*  setActiveType={setActiveType}*/}
+                {/*/>*/}
+              </div>
+              <WiringKitsBlock />
+              <WiringKitPages />
+            </>
+          ) : (
+            <>
+              <div className={styles.filters}>
+                <div className={styles.totalCount}>
+                  <span>Товаров: </span>
+                  <span>{totalCount}</span>
+                </div>
+                <SortBlock />
+                <TypeOfViewBlock
+                  activeType={activeType}
+                  setActiveType={setActiveType}
+                />
+              </div>
+              <TowbarsBlock activeType={activeType} />
+              <TowbarPages />
+            </>
+          )}
         </div>
       </div>
     </div>

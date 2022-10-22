@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import $api from "http/index";
 import openNotification from "utils/notifications";
 
 import styles from "./JoinBlock.module.scss";
@@ -18,7 +18,7 @@ const JoinBlock = ({ onLogin }: any) => {
       userName,
     };
     setLoading(true);
-    await axios.post(`${process.env.API_URL}` + "/api/sockets/rooms", obj);
+    await $api.post(`${process.env.API_URL}` + "/api/sockets/rooms", obj);
     onLogin(obj);
   };
 

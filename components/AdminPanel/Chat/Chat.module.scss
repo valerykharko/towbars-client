@@ -45,6 +45,17 @@
     width: 100%;
     margin-bottom: 10px;
   }
+
+  button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+
+    &:hover {
+      border: 1px solid gray;
+    }
+  }
 }
 
 .messages {

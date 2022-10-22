@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Router from "next/router";
 import Link from "next/link";
 
 import styles from "./CatalogMenu.module.scss";
 
-const CatalogMenu = () => {
-  const [active, setActive] = useState("/catalog");
-
+const CatalogMenu = ({ activePanel, setActivePanel }: any) => {
   useEffect(() => {
-    setActive(Router.asPath);
+    setActivePanel(Router.asPath);
   }, []);
 
   return (
@@ -16,7 +14,7 @@ const CatalogMenu = () => {
       <Link href={"/catalog"}>
         <div
           className={
-            active === "/catalog"
+            activePanel === "/catalog"
               ? [styles.menuItem, styles.menuItemActive].join(" ")
               : styles.menuItem
           }
@@ -42,7 +40,7 @@ const CatalogMenu = () => {
       <Link href={"/catalog/electrics"}>
         <div
           className={
-            active === "/catalog/electrics"
+            activePanel === "/catalog/electrics"
               ? [styles.menuItem, styles.menuItemActive].join(" ")
               : styles.menuItem
           }
@@ -68,7 +66,7 @@ const CatalogMenu = () => {
       <Link href={"/catalog/accessories"}>
         <div
           className={
-            active === "/catalog/accessories"
+            activePanel === "/catalog/accessories"
               ? [styles.menuItem, styles.menuItemActive].join(" ")
               : styles.menuItem
           }
