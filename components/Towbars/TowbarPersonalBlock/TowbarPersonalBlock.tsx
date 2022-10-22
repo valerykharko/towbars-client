@@ -127,7 +127,7 @@ const TowbarPersonalBlock = () => {
             <div
               className={styles.other__share}
               onClick={() =>
-                copy(`${"http://localhost:3000/catalog/towbars/" + towbar?.id}`)
+                copy(`${process.env.NEXT_PUBLIC_CLIENT + "/catalog/towbars/" + towbar?.id}`)
               }
             >
               <img src="/static/images/back.png" alt="back-icon" />
