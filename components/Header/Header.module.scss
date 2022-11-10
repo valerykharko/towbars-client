@@ -1,230 +1,238 @@
+@import "styles/colors";
+
 .header {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   height: 150px;
-  margin: 0 200px;
+  padding: 10px;
+  background-color: $header;
 
-  .leftBlock {
+  .desktop {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    justify-content: space-between;
+    height: 100%;
+    gap: 20px;
 
-    .logo {
-      width: 300px;
-    }
-  }
-
-  .centralBlock {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-
-    input {
-      margin-top: 10px;
-      padding: 12px 10px 10px 55px;
-      width: 400px;
-      height: 44px;
-      background-color: rgba(235, 235, 235, 0.6);
-      background-image: url("/static/images/header/search.png");
-      background-position: 15px 10px;
-      background-size: 25px;
-      background-repeat: no-repeat;
-      border-radius: 5px;
-      box-shadow: 0 0 2px 1px lightgray;
-      outline: none;
-      border: none;
-      font-size: 16px;
-
-      &:focus {
-        box-shadow: 0 0 2px 2px #096dd9;
-      }
-    }
-  }
-
-  .rightBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 270px;
-
-    .block {
+    .leftBlock {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 65px;
-      width: 65px;
-      margin: 0 10px;
-      padding: 3px 0;
+      justify-content: flex-start;
+      align-items: flex-start;
+      min-width: 150px;
+      max-width: 150px;
       cursor: pointer;
-      transition: 0.5s;
 
-      &:hover {
-        border-radius: 10px;
-        background-color: #f0f0f3;
-        box-shadow: 0 2px 2px 2px #d3d3d6;
+      .logo {
+        width: 100%;
+        max-width: 70px;
+        height: 100%;
+        padding-right: 2px;
 
-        img {
-          transform: scale(1.05);
-        }
-
-        span {
-          color: #2f4f4f;
-          font-weight: bold;
-        }
+        border-right: 1px solid black;
       }
 
-      img {
-        margin-right: 1px;
-        padding: 5px 0;
-        width: 30px;
-      }
-
-      span {
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      &Active {
-        color: #2f4f4f;
-        font-weight: bold;
-      }
-    }
-
-    .blockCart {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 65px;
-      width: 65px;
-      cursor: pointer;
-      transition: 0.5s;
-
-      &:hover {
-        border-radius: 10px;
-        background-color: #f0f0f3;
-        box-shadow: 0 2px 2px 2px #d3d3d6;
-
-        img {
-          transform: scale(1.05);
-        }
-
-        span {
-          color: #2f4f4f;
-          font-weight: bold;
-        }
-      }
-
-      img {
-        padding: 5px 0;
-        margin-right: 7px;
-        width: 30px;
-      }
-
-      span {
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
-      }
-    }
-
-    .blockCartFull {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 65px;
-      width: 65px;
-      cursor: pointer;
-      transition: 0.5s;
-
-      &:hover {
-        border-radius: 10px;
-        background-color: #f0f0f3;
-        box-shadow: 0 2px 2px 2px #d3d3d6;
-
-        img {
-          transform: scale(1.05);
-        }
-
-        span {
-          color: #2f4f4f;
-          font-weight: bold;
-        }
-      }
-
-      img {
-        padding: 5px 0;
-        margin-right: 7px;
-        width: 30px;
-      }
-
-      span {
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
-      }
-
-      .cartCount {
+      .title {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        margin: 0 0 30px 30px;
-        position: absolute;
-        padding: 5px;
-        border-radius: 50%;
-        outline: 1px solid gray;
-        background-color: #fefefe;
+        align-items: flex-start;
+        height: 90px;
+        padding-left: 5px;
 
-        span {
-          font-size: 15px;
+        h1 {
+          text-transform: uppercase;
+          font-size: 24px;
           font-weight: bold;
-          color: cornflowerblue;
+          letter-spacing: 5px;
+        }
+        span {
+          padding-left: 3px;
+          line-height: 1.2;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
         }
       }
     }
 
-    .blockAuto {
+    .centralBlock {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      height: 65px;
-      width: 70px;
-      padding: 5px 0;
-      cursor: pointer;
-      transition: 0.5s;
+    }
 
-      &:hover {
-        border-radius: 10px;
-        background-color: #f0f0f3;
-        box-shadow: 0 2px 2px 2px #d3d3d6;
+    .rightBlock {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      min-width: 150px;
+      gap: 5px;
 
-        img {
-          transform: scale(1.05);
+      .tabs {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+
+        .tab {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 70px;
+          height: 70px;
+          cursor: pointer;
+
+          .tabImgCart {
+            margin-right: 3px !important;
+          }
+
+          &Text {
+            padding: 5px 0;
+            text-align: center;
+            font-size: 14px;
+          }
+
+          &Count {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            margin: 0 0 40px 35px;
+            position: absolute;
+            padding: 5px;
+            border-radius: 50%;
+
+            background-color: $btn_strong;
+            outline: 1px solid $outline_strong_grey;
+
+            span {
+              text-align: center;
+              font-size: 16px;
+              font-weight: bold;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .header {
+    height: 130px;
+
+    .desktop {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .header {
+    height: 130px;
+    padding: 10px 20px;
+
+    .desktop {
+      .leftBlock {
+        .logo {
+          max-width: 40px;
+          border-right: 0;
         }
 
-        span {
-          color: #2f4f4f;
-          font-weight: bold;
+        .title {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .header {
+    height: 130px;
+
+    .desktop {
+      .leftBlock {
+        min-width: 230px;
+        max-width: 230px;
+
+        .logo {
         }
       }
 
-      img {
-        padding: 7px 0 8px 0;
-        width: 50px;
+      .rightBlock {
+        min-width: 230px;
+        max-width: 230px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1280px) {
+  .header {
+    height: 130px;
+    padding: 10px 100px;
+
+    .desktop {
+      .leftBlock {
+        min-width: 230px;
+        max-width: 230px;
+
+        .logo {
+        }
       }
 
-      span {
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
+      .rightBlock {
+        min-width: 230px;
+        max-width: 230px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (max-device-width: 1600px) {
+  .header {
+    padding: 10px 10%;
+    .desktop {
+      .leftBlock {
+        min-width: 350px;
+        max-width: 350px;
+
+        .title {
+          span {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .rightBlock {
+        min-width: 350px;
+        max-width: 350px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .header {
+    padding: 10px 17%;
+    .desktop {
+      .leftBlock {
+        min-width: 350px;
+        max-width: 350px;
+
+        .title {
+          span {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .rightBlock {
+        min-width: 350px;
+        max-width: 350px;
       }
     }
   }

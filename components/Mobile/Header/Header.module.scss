@@ -1,0 +1,82 @@
+@import "styles/colors";
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .mobile {
+    display: flex;
+    gap: 10px;
+
+    .menu {
+      flex: 0 1 15%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .menuIcon {
+        position: relative;
+        flex: 0 1 100%;
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    .center {
+      flex: 0 1 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .rightBlock {
+      flex: 0 1 15%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      .block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 0;
+        width: 65px;
+
+        &ImgCart {
+          margin-right: 3px !important;
+        }
+
+        &Text {
+          padding-top: 3px;
+          text-align: center;
+          font-size: 14px;
+        }
+
+        &Count {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 22px;
+          height: 22px;
+          margin: 0 0 40px 30px;
+          position: absolute;
+          padding: 5px;
+          border-radius: 50%;
+
+          background-color: $btn_strong;
+          outline: 1px solid $outline_strong_grey;
+
+          &Text {
+            font-size: 14px;
+            font-weight: bold;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}

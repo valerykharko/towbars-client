@@ -7,23 +7,20 @@ export function setOrder(data: IOrder): OrderAction {
 }
 
 export const makeUserOrder = (
-  firstName: string,
-  secondName: string,
-  phoneNumber: string,
   items: any,
+  userData: any,
   totalPrice: number,
   totalCount: number
 ) => {
   return async (dispatch: Dispatch) => {
     try {
       const { data } = await OrderService.makeOrder(
-        firstName,
-        secondName,
-        phoneNumber,
         items,
+        userData,
         totalPrice,
         totalCount
       );
+      dispatch(setOrder(data));
     } catch (e: any) {
       console.log(e.response?.data?.message);
     }

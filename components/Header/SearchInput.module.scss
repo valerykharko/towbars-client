@@ -1,0 +1,118 @@
+.searchInputBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .searchInput {
+    width: 100%;
+    max-width: 250px;
+    height: 44px;
+    padding: 12px 10px 10px 55px;
+    margin-top: 10px;
+
+    background-color: rgba(235, 235, 235, 0.6);
+    background-image: url("/static/images/header/search.png");
+    background-position: 15px 10px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px lightgray;
+
+    outline: none;
+    border: none;
+
+    font-size: 16px;
+
+    &:focus {
+      box-shadow: 0 0 2px 2px #9b9b9b;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .searchInputBlock {
+    .searchInput {
+      max-width: 85%;
+      height: 25px;
+      padding: 2px 5px 2px 33px;
+      margin-top: 5px;
+
+      background-position: 10px 5px;
+      background-size: 14px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .searchInputBlock {
+    .searchInput {
+      max-width: 87%;
+      height: 25px;
+      padding: 2px 5px 2px 44px;
+      margin-top: 0;
+
+      background-position: 15px 5px;
+      background-size: 16px;
+    }
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .searchInputBlock {
+    justify-content: flex-end;
+
+    .searchInput {
+      max-width: 90%;
+      height: 25px;
+      padding: 2px 5px 2px 45px;
+      margin-top: 0;
+
+      background-position: 15px 5px;
+      background-size: 16px;
+    }
+  }
+
+  .center {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1280px) {
+  .searchInputBlock {
+    justify-content: flex-end;
+
+    .searchInput {
+      max-width: 90%;
+      height: 25px;
+      padding: 2px 5px 2px 45px;
+      margin-top: 0;
+
+      background-size: 16px;
+    }
+  }
+
+  .center {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .searchInputBlock {
+    justify-content: flex-end;
+
+    .searchInput {
+      margin-top: 0;
+    }
+  }
+
+  .center {
+    display: none;
+  }
+}

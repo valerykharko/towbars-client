@@ -1,0 +1,330 @@
+@import "styles/colors";
+
+.container {
+  padding: 25px 50px;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: $white;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $light_grey;
+
+      &Color {
+        flex: 0 1 33%;
+        div {
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          background-color: orange;
+        }
+
+        &Orange {
+          div {
+            background-color: green;
+          }
+        }
+      }
+
+      &Center {
+        flex: 0 1 33%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &Name {
+          font-size: 20px;
+          font-weight: bold;
+          margin-right: 15px;
+        }
+
+        &Date {
+          display: inline-block;
+          margin-top: 5px;
+          font-size: 16px;
+        }
+      }
+
+      &Status {
+        flex: 0 1 33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        span {
+          font-size: 16px;
+        }
+        p {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .orderItem {
+      display: flex;
+      flex-direction: column;
+
+      .orderElement {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+
+        &:last-child {
+          padding-bottom: 25px;
+          border-bottom: 1px solid $light_grey;
+        }
+
+        .position {
+          margin-right: 20px;
+          span {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+        .image {
+          width: 100px;
+          height: 100px;
+          margin-right: 20px;
+          cursor: pointer;
+          img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            outline: 1px solid $light_grey;
+          }
+        }
+
+        .name {
+          flex: 0 1 31%;
+          span {
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+
+        .count {
+          flex: 0 1 27%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          span {
+            font-size: 16px;
+          }
+        }
+
+        .price {
+          flex: 0 1 27%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .otherInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      .totalCount {
+        margin-bottom: 10px;
+        span:nth-child(1) {
+          font-size: 16px;
+        }
+        span:nth-child(2) {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .totalPrice {
+        span:nth-child(1) {
+          font-size: 16px;
+        }
+        span:nth-child(2) {
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+  .container {
+    padding: 10px;
+    margin-top: 10px;
+
+    .item {
+      .header {
+        display: flex;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+
+        &Color {
+          flex: 0 1 15%;
+        }
+
+        &Center {
+          flex: 0 1 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          text-align: center;
+
+          &Name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 0;
+          }
+
+          &Date {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 16px;
+          }
+        }
+
+        &Status {
+          flex: 0 1 25%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          text-align: right;
+
+          span {
+            font-size: 16px;
+          }
+          p {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      .orderItem {
+        display: flex;
+        flex-direction: column;
+
+        .orderElement {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 10px;
+
+          &:last-child {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $light_grey;
+          }
+
+          .position {
+            display: none;
+          }
+
+          .name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            text-align: center;
+            span {
+              display: inline-block;
+              margin-bottom: 10px;
+              font-size: 16px;
+              font-weight: bold;
+            }
+            p {
+              font-size: 16px;
+            }
+          }
+
+          .count {
+            flex: 0 1 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            span {
+              font-size: 16px;
+              font-weight: normal;
+            }
+          }
+
+          .price {
+            flex: 0 1 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            span {
+              font-size: 16px;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+
+      .otherInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        .totalCount {
+          margin-bottom: 5px;
+          span:nth-child(1) {
+            font-size: 16px;
+          }
+          span:nth-child(2) {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+
+        .totalPrice {
+          span:nth-child(1) {
+            font-size: 16px;
+          }
+          span:nth-child(2) {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1280px) {
+  .container {
+    padding: 20px;
+  }
+}

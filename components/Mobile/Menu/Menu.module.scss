@@ -1,0 +1,101 @@
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .container {
+    display: flex;
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50vw;
+      min-width: 250px;
+      height: 100vh;
+      padding: 10px;
+
+      background: #fafafa;
+      box-shadow: 0 0 8px 8px whitesmoke;
+      z-index: 999;
+
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .logoIcon {
+            width: 30px;
+            max-width: 70px;
+            height: 100%;
+          }
+
+          h2 {
+            height: 30px;
+            padding: 3px 5px 5px 7px;
+            margin: 0;
+
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-left: 2px solid black;
+          }
+        }
+      }
+
+      .menuList {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 30px;
+
+        .menuItem {
+          flex: 0 1 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          min-width: 220px;
+          padding: 5px 10px;
+          margin-bottom: 15px;
+
+          box-shadow: 0 0 2px 2px #f0f0f0;
+          outline: 2px solid #f0f0f0;
+
+          &Active {
+            outline: 2px solid grey;
+            box-shadow: 0 0 6px 6px #cdcdcd;
+
+            span {
+              font-size: 16px;
+              font-weight: bold;
+            }
+          }
+
+          &Icon {
+            flex: 0 1 100%;
+            max-width: 30px;
+            max-height: 30px;
+            margin-right: 10px;
+          }
+
+          &Text {
+            font-size: 16px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+
+    .menuBackdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(10px);
+      z-index: 998;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import "styles/colors";
+
+.container {
+  flex: 0 1 33%;
+  height: 100%;
+  padding: 20px 40px 50px 40px;
+  margin-top: 55px;
+  background-color: $white;
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .totalCount {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-bottom: 20px;
+
+      font-size: 16px;
+      color: $dark_grey;
+    }
+
+    .totalPrice {
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 18px;
+      color: $black;
+
+      span:nth-child(2) {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .bottom {
+    margin-top: 40px;
+    button {
+      width: 100%;
+      height: 50px;
+      border-radius: 5px;
+
+      background-color: #11ad44;
+
+      cursor: pointer;
+
+      span {
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        letter-spacing: 0.4px;
+      }
+
+      &:hover {
+        box-shadow: 0 0 3px 3px #118742;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .container {
+    padding: 20px 10% 50px 10%;
+    margin-top: 20px;
+
+    .top {
+      .totalCount {
+        font-size: 14px;
+      }
+
+      .totalPrice {
+        font-size: 16px;
+      }
+    }
+
+    .bottom {
+      button {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .container {
+    padding: 20px 20% 50px 20%;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .container {
+    padding: 20px 15% 50px 15%;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1280px) {
+  .container {
+    padding: 20px 20% 50px 20%;
+    margin-top: 20px;
+  }
+}

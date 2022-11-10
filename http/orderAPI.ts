@@ -4,18 +4,14 @@ import IOrder from "interfaces/order";
 
 export default class OrderService {
   static async makeOrder(
-    firstName: string,
-    secondName: string,
-    phoneNumber: string,
     items: any,
+    userData: any,
     totalPrice: number,
     totalCount: number
-  ): Promise<AxiosResponse<IOrder[]>> {
-    return $api.post<IOrder[]>("/orders", {
-      firstName,
-      secondName,
-      phoneNumber,
+  ): Promise<AxiosResponse<IOrder>> {
+    return $api.post<IOrder>("/orders", {
       items,
+      userData,
       totalPrice,
       totalCount,
     });

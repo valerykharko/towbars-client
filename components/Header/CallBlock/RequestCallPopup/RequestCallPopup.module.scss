@@ -1,0 +1,94 @@
+@import "styles/colors";
+
+.popup {
+  width: 100%;
+  height: 120vh;
+  padding: 15% 30%;
+  position: fixed;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  transform: translateY(-150%);
+
+  &Active {
+    backdrop-filter: blur(4px) brightness(0.5);
+    transform: translateY(-15%);
+    z-index: 1001;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+
+    outline: 3px solid $outline_strong_1_grey;
+    box-shadow: 0 0 8px 8px $outline_strong_2_grey;
+    background: $white;
+
+    .header {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .tip {
+      padding: 15px 0;
+      text-align: start;
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    .button {
+      padding-top: 20px;
+
+      button {
+        width: 250px;
+        padding: 10px;
+        border-radius: 5px;
+
+        background-color: $btn;
+        outline: 2px solid $light_grey;
+        cursor: pointer;
+
+        font-size: 16px;
+
+        &:hover {
+          background-color: $btn_hover;
+          outline: 2px solid $outline_grey;
+          cursor: pointer;
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .popup {
+    padding: 50% 5%;
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .popup {
+    padding: 30% 5%;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .popup {
+    padding: 20% 20%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+}

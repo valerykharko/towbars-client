@@ -7,8 +7,34 @@ export default class CarService {
     return $api.get<IBrand[]>("/autos/brands");
   }
 
+  static async getBrandById(brandId: number): Promise<AxiosResponse<IBrand>> {
+    return $api.get<IBrand>("/autos/brands/" + brandId);
+  }
+
+  static async editBrand(
+    brandId: number,
+    value: boolean
+  ): Promise<AxiosResponse<IBrand>> {
+    return $api.patch<IBrand>("/autos/brands/" + brandId, {
+      value,
+    });
+  }
+
   static async getModels(brandId: number): Promise<AxiosResponse<IModel[]>> {
     return $api.get<IModel[]>("/autos/models", { params: { brandId } });
+  }
+
+  static async getModelById(modelId: number): Promise<AxiosResponse<IModel>> {
+    return $api.get<IModel>("/autos/models/" + modelId);
+  }
+
+  static async editModel(
+    modelId: number,
+    value: boolean
+  ): Promise<AxiosResponse<IModel>> {
+    return $api.patch<IModel>("/autos/models/" + modelId, {
+      value,
+    });
   }
 
   static async getGenerations(
@@ -17,6 +43,21 @@ export default class CarService {
   ): Promise<AxiosResponse<IGeneration[]>> {
     return $api.get<IGeneration[]>("/autos/generations", {
       params: { brandId, modelId },
+    });
+  }
+
+  static async getGenerationById(
+    generationId: number
+  ): Promise<AxiosResponse<IGeneration>> {
+    return $api.get<IGeneration>("/autos/generations/" + generationId);
+  }
+
+  static async editGeneration(
+    generationId: number,
+    value: boolean
+  ): Promise<AxiosResponse<IGeneration>> {
+    return $api.patch<IGeneration>("/autos/generations/" + generationId, {
+      value,
     });
   }
 

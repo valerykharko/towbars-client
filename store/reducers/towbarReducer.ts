@@ -7,10 +7,8 @@ import {
 const initialState: TowbarState = {
   towbars: [],
   towbar: null,
-  page: 1,
-  limit: 8,
-  totalCount: 0,
-  ballTypes: [],
+  towbarAdmin: null,
+  towbarsAdmin: [],
   searchValues: [],
 };
 
@@ -24,20 +22,20 @@ export const towbarReducer = (
         ...state,
         towbars: action.payload,
       };
-    case TowbarActionsTypes.SET_TOTAL_COUNT:
-      return {
-        ...state,
-        totalCount: action.payload,
-      };
-    case TowbarActionsTypes.SET_CURRENT_PAGE:
-      return {
-        ...state,
-        page: action.payload,
-      };
     case TowbarActionsTypes.SET_CURRENT_TOWBAR:
       return {
         ...state,
         towbar: action.payload,
+      };
+    case TowbarActionsTypes.SET_TOWBAR_ADMIN:
+      return {
+        ...state,
+        towbarAdmin: action.payload,
+      };
+    case TowbarActionsTypes.SET_TOWBARS_ADMIN:
+      return {
+        ...state,
+        towbarsAdmin: action.payload,
       };
     case TowbarActionsTypes.SET_SEARCH_VALUES:
       return {

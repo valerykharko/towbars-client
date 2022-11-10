@@ -1,3 +1,5 @@
+import { Dispatch } from "redux";
+import CarService from "http/carAPI";
 import {
   CarAction,
   CarActionsTypes,
@@ -6,19 +8,29 @@ import {
   IGeneration,
   IModel,
 } from "interfaces/car";
-import { Dispatch } from "redux";
-import CarService from "http/carAPI";
 
 export function setBrands(value: IBrand[]): CarAction {
   return { type: CarActionsTypes.SET_BRANDS, payload: value };
+}
+
+export function setBrand(value: IBrand | undefined): CarAction {
+  return { type: CarActionsTypes.SET_BRAND, payload: value };
 }
 
 export function setModels(value: IModel[]): CarAction {
   return { type: CarActionsTypes.SET_MODELS, payload: value };
 }
 
+export function setModel(value: IModel | undefined): CarAction {
+  return { type: CarActionsTypes.SET_MODEL, payload: value };
+}
+
 export function setGenerations(value: IGeneration[]): CarAction {
   return { type: CarActionsTypes.SET_GENERATIONS, payload: value };
+}
+
+export function setGeneration(value: IGeneration | undefined): CarAction {
+  return { type: CarActionsTypes.SET_GENERATION, payload: value };
 }
 
 export function setBodyStyles(value: IBodyStyle[]): CarAction {
@@ -62,6 +74,20 @@ export const fetchBrands = () => {
   };
 };
 
+export const fetchBrandById = (brandId: number) => {
+  return async (dispatch: Dispatch<CarAction>) => {
+    const { data } = await CarService.getBrandById(brandId);
+    dispatch(setBrand(data));
+  };
+};
+
+export const editBrand = (brandId: number, value: boolean) => {
+  return async (dispatch: Dispatch<CarAction>) => {
+    const { data } = await CarService.editBrand(brandId, value);
+    dispatch(setBrand(data));
+  };
+};
+
 export const fetchModels = (brandId: number) => {
   return async (dispatch: Dispatch<CarAction>) => {
     const { data } = await CarService.getModels(brandId);
@@ -69,10 +95,38 @@ export const fetchModels = (brandId: number) => {
   };
 };
 
+export const fetchModelById = (modelId: number) => {
+  return async (dispatch: Dispatch<CarAction>) => {
+    const { data } = await CarService.getModelById(modelId);
+    dispatch(setModel(data));
+  };
+};
+
+export const editModel = (modelId: number, value: boolean) => {
+  return async (dispatch: Dispatch<CarAction>) => {
+    const { data } = await CarService.editModel(modelId, value);
+    dispatch(setModel(data));
+  };
+};
+
 export const fetchGenerations = (brandId: number, modelId: number) => {
   return async (dispatch: Dispatch<CarAction>) => {
     const { data } = await CarService.getGenerations(brandId, modelId);
     dispatch(setGenerations(data));
+  };
+};
+
+export const fetchGenerationById = (generationId: number) => {
+  return async (dispatch: Dispatch<CarAction>) => {
+    const { data } = await CarService.getGenerationById(generationId);
+    dispatch(setGeneration(data));
+  };
+};
+
+export const editGeneration = (generationId: number, value: boolean) => {
+  return async (dispatch: Dispatch<CarAction>) => {
+    const { data } = await CarService.editGeneration(generationId, value);
+    dispatch(setGeneration(data));
   };
 };
 
@@ -90,35 +144,3 @@ export const fetchBodyStyles = (
     dispatch(setBodyStyles(data));
   };
 };
-
-export function setBrandValue(value: IBrand): CarAction {
-  return { type: CarActionsTypes.SET_BRAND, payload: value };
-}
-
-export function setBrandActive(isActive: boolean): CarAction {
-  return { type: CarActionsTypes.SET_BRAND_ACTIVE, payload: isActive };
-}
-
-export function setModelValue(value: IModel): CarAction {
-  return { type: CarActionsTypes.SET_MODEL, payload: value };
-}
-
-export function setModelActive(isActive: boolean): CarAction {
-  return { type: CarActionsTypes.SET_MODEL_ACTIVE, payload: isActive };
-}
-
-export function setGenerationValue(value: IGeneration): CarAction {
-  return { type: CarActionsTypes.SET_GENERATION, payload: value };
-}
-
-export function setGenerationActive(isActive: boolean): CarAction {
-  return { type: CarActionsTypes.SET_GENERATION_ACTIVE, payload: isActive };
-}
-
-export function setBodyStyleValue(value: IBodyStyle): CarAction {
-  return { type: CarActionsTypes.SET_BODY_STYLE, payload: value };
-}
-
-export function setBodyStyleActive(isActive: boolean): CarAction {
-  return { type: CarActionsTypes.SET_BODY_STYLE_ACTIVE, payload: isActive };
-}

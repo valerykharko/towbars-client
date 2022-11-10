@@ -3,7 +3,7 @@ import { UserAction, UserActionsTypes, UserState } from "interfaces/user";
 const initialState: UserState = {
   user: null,
   isAuth: false,
-  isLoading: false,
+  isLoading: "start",
 };
 
 export const userReducer = (
@@ -18,6 +18,8 @@ export const userReducer = (
       };
     case UserActionsTypes.SET_IS_AUTH:
       return { ...state, isAuth: action.payload };
+    case UserActionsTypes.SET_IS_LOADING:
+      return { ...state, isLoading: action.payload };
     case UserActionsTypes.EDIT_USER:
       return { ...state };
     default:

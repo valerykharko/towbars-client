@@ -1,0 +1,108 @@
+@import "styles/colors";
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 150px - 150px);
+  padding: 10px;
+
+  background: $body;
+
+  .mainBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .mainText {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.3;
+      color: $black;
+    }
+
+    .advertising {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 10px 0;
+
+      .gif {
+        width: 45%;
+        height: 100%;
+        margin-right: 15px;
+        background: $white;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .wrapper {
+    min-height: calc(100vh - 70px - 130px);
+
+    .mainBlock {
+      .mainText {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .wrapper {
+    min-height: calc(100vh - 70px - 130px);
+    padding: 20px 10px;
+
+    .mainBlock {
+      .mainText {
+        font-size: 22px;
+      }
+
+      .advertising {
+        .gif {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .wrapper {
+    min-height: calc(100vh - 70px - 130px);
+    padding: 20px 10px;
+
+    .mainBlock {
+      .mainText {
+        font-size: 22px;
+      }
+
+      .advertising {
+        .gif {
+          max-width: 350px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .wrapper {
+    padding: 20px 10px;
+
+    .mainBlock {
+      .mainText {
+        font-size: 32px;
+      }
+
+      .advertising {
+        .gif {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+}

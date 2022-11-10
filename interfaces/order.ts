@@ -1,11 +1,10 @@
 export default interface IOrder {
   id: number;
-  firstName: string;
-  secondName: string;
-  phoneNumber: string;
   items: any;
   date: string;
   status: string;
+  userData: any;
+  shipment_date: string
   totalPrice: number;
   totalCount: number;
 }

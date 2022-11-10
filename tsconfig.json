@@ -47,10 +47,10 @@
   ],
   "exclude": [
     "node_modules",
-    "./store/reducers/cartReducer.js",
+    "./store/reducers/cartReducer",
     "./components/AdminPanel/Catalog/db",
-    "./components/AdminPanel/Statistics/Charts/Charts.jsx",
-    "components/AdminPanel/Statistics/Charts/Charts.jsx",
-    "components/Cart/CartBlock.jsx"
+    "./components/Admin/Statistics/Charts/Charts",
+    "components/Admin/Statistics/Charts/Charts",
+    "components/Pages/Cart/CartBlock"
   ]
 }

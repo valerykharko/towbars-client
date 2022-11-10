@@ -1,0 +1,434 @@
+@import "styles/colors";
+
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  padding: 0 100px;
+
+  z-index: 999;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+
+    background: white;
+    outline: 2px solid $light_white;
+    box-shadow: 0 0 8px 8px $light1_white;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65px;
+
+        span {
+          font-size: 26px;
+          font-weight: bold;
+        }
+      }
+
+      .call {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65px;
+
+        .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 210px;
+          height: 50px;
+          padding: 10px 15px;
+          border-radius: 5px;
+
+          outline: 2px solid $outline_grey;
+          box-shadow: 0 0 4px 4px $light_grey;
+
+          cursor: pointer;
+
+          &TextM {
+            display: none;
+          }
+
+          &TextD {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.4px;
+            color: $black;
+          }
+
+          img {
+            margin-right: 7px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .addToCart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65px;
+
+        button {
+          padding: 10px 20px;
+
+          background-color: $btn;
+          outline: 1px solid $outline_grey;
+          box-shadow: 0 0 4px 4px $light_grey;
+
+          animation-name: light;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+
+          cursor: pointer;
+
+          &:hover {
+            background-color: $btn_hover;
+            outline: 1px solid $outline_strong_grey;
+            box-shadow: 0 0 6px 6px $light_grey;
+          }
+
+          @keyframes light {
+            from {
+              box-shadow: 0 0 6px 6px $light_grey;
+            }
+
+            50% {
+              box-shadow: 0 0 4px 4px $light_grey;
+            }
+
+            to {
+              box-shadow: 0 0 6px 6px $light_grey;
+            }
+          }
+        }
+
+        span {
+          font-size: 16px;
+          font-weight: bold;
+          color: $black;
+        }
+      }
+
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 65px;
+
+        div:last-child {
+          margin-right: 0;
+        }
+
+        .contactBlock {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 135px;
+          padding: 5px 10px;
+          margin-right: 20px;
+          border-radius: 5px;
+
+          outline: 2px solid $outline_grey;
+          box-shadow: 0 0 4px 4px $light_grey;
+
+          cursor: pointer;
+
+          img {
+            margin-right: 7px;
+            width: 30px;
+            height: 30px;
+          }
+
+          span {
+            font-family: "Fredoka One", cursive;
+            font-size: 16px;
+            letter-spacing: 0.8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 485px) {
+  .wrapper {
+    padding: 0;
+    .container {
+      .left {
+        width: 70%;
+        .price {
+          span {
+            font-size: 22px;
+          }
+        }
+
+        .call {
+          .btn {
+            width: 140px;
+            min-width: 50px;
+            height: 40px;
+            padding: 5px;
+
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            &TextM {
+              display: inline-block;
+              font-size: 16px;
+              font-weight: bold;
+              letter-spacing: 0.4px;
+              color: $black;
+            }
+
+            &TextD {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .right {
+        .addToCart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 65px;
+
+          button {
+            padding: 10px;
+          }
+        }
+
+        .contacts {
+          .contactBlock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            padding: 5px;
+            margin-right: 10px;
+
+            img {
+              margin-right: 0;
+            }
+
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 485px) and (max-device-width: 600px) {
+  .wrapper {
+    padding: 0;
+    .container {
+      .left {
+        width: 100%;
+        .price {
+          span {
+            font-size: 22px;
+          }
+        }
+
+        .call {
+          .btn {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            &TextD {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .right {
+        .contacts {
+          .contactBlock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            padding: 10px;
+            margin-right: 25px;
+
+            img {
+              margin-right: 0;
+            }
+
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .wrapper {
+    padding: 0 35px;
+    .container {
+      .left {
+        width: 100%;
+        .price {
+          span {
+            font-size: 22px;
+          }
+        }
+
+        .call {
+          .btn {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            &TextD {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .right {
+        .contacts {
+          .contactBlock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            padding: 10px;
+            margin-right: 25px;
+
+            img {
+              margin-right: 0;
+            }
+
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 900px) {
+  .wrapper {
+    .container {
+      .left {
+        width: 100%;
+        .price {
+          span {
+            font-size: 22px;
+          }
+        }
+
+        .call {
+          .btn {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            &TextD {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .right {
+        .contacts {
+          .contactBlock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            padding: 10px;
+            margin-right: 25px;
+
+            img {
+              margin-right: 0;
+            }
+
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 900px) and (max-device-width: 1180px) {
+  .wrapper {
+    .container {
+      .left {
+        width: 50%;
+        .price {
+          span {
+            font-size: 22px;
+          }
+        }
+
+        .call {
+          .btn {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+
+            &TextD {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) {
+  .wrapper {
+    display: none;
+  }
+}

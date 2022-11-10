@@ -1,56 +1,248 @@
+@import "/styles/colors";
+
 .footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 150px;
+  gap: 5px;
   width: 100%;
-  padding: 20px 150px 20px 150px;
-  background-color: darkgray;
+  height: 90px;
+  padding: 5px;
+  background-color: $footer;
 
   .left {
-    display: flex;
-    flex: 0 1 30%;
-
-    div {
-      width: 250px;
-      span {
-        display: inline-block;
-        font-size: 14px;
-        margin-top: 10px;
-      }
-    }
-  }
-
-  .center {
+    flex: 0 1 63%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 0 1 40%;
-    font-size: 16px;
 
-    div {
-      margin-bottom: 10px;
+    .timeBlock {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .imgBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .clockImg {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+        }
+
+        span {
+          display: inline-block;
+          padding-left: 4px;
+          margin: 5px 0;
+          font-size: 14px;
+          letter-spacing: 0.8px;
+        }
+      }
+
+      .timeText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 10px;
+
+        div {
+          padding: 2px 0;
+        }
+      }
     }
 
-    div:last-child {
-      font-size: 14px;
-    }
+    .copyrightBlock {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 5px;
 
-    .icons {
-      img {
-        margin-right: 10px;
+      span {
+        display: inline-block;
+        margin: 0 5px;
+        font-size: 11px;
+      }
+
+      strong {
+        font-size: 11px;
       }
     }
   }
 
   .right {
-    flex: 0 1 30%;
+    flex: 0 1 39%;
 
     span {
-      display: inline-block;
-      font-size: 14px;
-      margin-bottom: 10px;
+      font-style: italic;
+      font-size: 10px;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .footer {
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+
+    .left {
+      flex: 0 1 40%;
+
+      .timeBlock {
+        .imgBlock {
+          .clockImg {
+            width: 25px;
+            height: 25px;
+          }
+
+          span {
+            font-size: 16px;
+          }
+        }
+
+        .timeText {
+          margin-left: 13px;
+
+          div {
+            padding: 4px 0;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .copyrightBlock {
+        span {
+          font-size: 12px;
+        }
+
+        strong {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .right {
+      flex: 0 1 60%;
+      line-height: 16px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .footer {
+    align-items: center;
+    gap: 20px;
+    padding: 10px 10%;
+
+    .left {
+      flex: 0 1 40%;
+
+      .timeBlock {
+        .imgBlock {
+          .clockImg {
+            width: 25px;
+            height: 25px;
+          }
+
+          span {
+            font-size: 16px;
+          }
+        }
+
+        .timeText {
+          margin-left: 13px;
+
+          div {
+            padding: 4px 0;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .copyrightBlock {
+        span {
+          font-size: 12px;
+        }
+
+        strong {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .right {
+      flex: 0 1 60%;
+      line-height: 16px;
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .footer {
+    align-items: center;
+    height: 100px;
+    gap: 20px;
+    padding: 10px 10%;
+
+    .left {
+      flex: 0 1 30%;
+
+      .timeBlock {
+        .imgBlock {
+          .clockImg {
+            width: 25px;
+            height: 25px;
+          }
+
+          span {
+            font-size: 18px;
+          }
+        }
+
+        .timeText {
+          margin-left: 13px;
+
+          div {
+            padding: 4px 0;
+            font-size: 18px;
+          }
+        }
+      }
+
+      .copyrightBlock {
+        margin-top: 10px;
+
+        span {
+          font-size: 14px;
+        }
+
+        strong {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .right {
+      flex: 0 1 70%;
+      line-height: 16px;
+
+      span {
+        font-size: 16px;
+      }
     }
   }
 }

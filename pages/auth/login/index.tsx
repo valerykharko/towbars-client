@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import LoginForm from "../../../modules/LoginForm/components/LoginForm";
+import LoginForm from "components/Pages/Auth/Login/LoginForm";
 
 const LoginPage = () => {
   return (

@@ -10,30 +10,36 @@ export default interface IUser {
   id: number;
   firstName: string;
   secondName: string;
+  patronymic: string;
+  country: string;
+  city: string;
   email: string;
   phoneNumber: string;
   isActivated: boolean;
   role: string;
-  autoId: number;
-  user_auto: IUserAuto;
 }
 
 export interface UserState {
   user: IUser | null;
   isAuth: boolean;
-  isLoading: boolean;
+  isLoading: "start" | "pending" | "end";
 }
 
 export enum UserActionsTypes {
   SET_USER = "SET_USER",
+  EDIT_USER = "EDIT_USER",
   SET_IS_AUTH = "SET_IS_AUTH",
   SET_IS_LOADING = "SET_IS_LOADING",
-  EDIT_USER = "EDIT_USER",
 }
 
 interface SetUser {
   type: UserActionsTypes.SET_USER;
   payload: IUser | null;
+}
+
+interface EditUser {
+  type: UserActionsTypes.EDIT_USER;
+  payload: {};
 }
 
 interface SetIsAuth {
@@ -43,12 +49,7 @@ interface SetIsAuth {
 
 interface SetIsLoading {
   type: UserActionsTypes.SET_IS_LOADING;
-  payload: boolean;
+  payload: "start" | "pending" | "end";
 }
 
-interface EditUser {
-  type: UserActionsTypes.EDIT_USER;
-  payload: {};
-}
-
-export type UserAction = SetUser | SetIsAuth | SetIsLoading | EditUser;
+export type UserAction = SetUser | EditUser | SetIsAuth | SetIsLoading;

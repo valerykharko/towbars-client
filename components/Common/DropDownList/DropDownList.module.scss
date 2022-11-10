@@ -1,0 +1,117 @@
+@import "styles/colors";
+
+.list {
+  position: absolute;
+  width: calc(100vw - 90px);
+  max-width: 610px;
+  min-height: 44px;
+  max-height: 215px;
+  margin-top: 42px;
+  background-color: $btn;
+  overflow-y: auto;
+  outline: 1px solid $outline_grey;
+  z-index: 10;
+
+  .block {
+    width: 100%;
+    padding: 5px 15px;
+    cursor: pointer;
+
+    span {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $black;
+      background-color: $btn_strong_hover;
+    }
+  }
+
+  &ForModel {
+    margin-top: 88px;
+  }
+
+  &ForGeneration {
+    margin-top: 134px;
+  }
+
+  &ForBodyStyle {
+    margin-top: 180px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .list {
+    max-width: 430px;
+    .block {
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .list {
+    width: calc(100vw - 180px);
+    max-width: 530px;
+
+    .block {
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .list {
+    width: calc(100vw - 280px);
+    max-width: 530px;
+    margin-top: 44px;
+
+    .block {
+      span {
+        font-size: 16px;
+      }
+    }
+
+    &ForModel {
+      margin-top: 92px;
+    }
+
+    &ForGeneration {
+      margin-top: 140px;
+    }
+
+    &ForBodyStyle {
+      margin-top: 188px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .list {
+    margin-top: 45px;
+    min-height: 56px;
+    max-height: 224px;
+
+    .block {
+      span {
+        font-size: 18px;
+      }
+    }
+
+    &ForModel {
+      margin-top: 98px;
+    }
+
+    &ForGeneration {
+      margin-top: 151px;
+    }
+
+    &ForBodyStyle {
+      margin-top: 204px;
+    }
+  }
+}

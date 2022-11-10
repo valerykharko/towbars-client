@@ -1,13 +1,9 @@
 import React from "react";
+import Image from "next/image";
 import Head from "next/head";
-import {
-  CarouselModule,
-  Footer,
-  SelectionBlock,
-  Recommendations,
-} from "components";
+import { Footer, SelectionBlock } from "components";
 
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/pages/Home.module.scss";
 
 const Home = () => {
   return (
@@ -18,23 +14,30 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div className={styles.mainBlock}>
-          <div className={styles.leftBlock}>
-            <div>
-              <span className={styles.mainText}>
-                Towbars - интернет-магазин по продаже фаркопов, <br /> электрики
-                (универсальной, штатной) и <br />
-                дополнительных аксессуаров
-              </span>
+        <div className={styles.wrapper}>
+          <div className={styles.mainBlock}>
+            <div className={styles.mainText}>
+              <span>Премиум-класс по доступной цене</span>
+            </div>
+            <div className={styles.advertising}>
+              <Image
+                className={styles.gif}
+                src="/static/images/main/poster1.gif"
+                alt="towbar-westfalia"
+                width={178}
+                height={130}
+              />
+              <Image
+                className={styles.gif}
+                src="/static/images/main/poster2.gif"
+                alt="towbar-westfalia"
+                width={178}
+                height={130}
+              />
             </div>
             <SelectionBlock />
           </div>
-          <div className={styles.rightBlock}>
-            <img src="static/images/towbar-west.png" alt="towbar-westfalia" />
-          </div>
         </div>
-        <CarouselModule />
-        <Recommendations />
         <Footer />
       </div>
     </>

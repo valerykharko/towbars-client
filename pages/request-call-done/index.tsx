@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import styles from "styles/RequestCallDone.module.scss";
+import styles from "styles/pages/RequestCallDone.module.scss";
 
 const RequestCallDone = () => {
   return (

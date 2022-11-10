@@ -1,8 +1,7 @@
 import { ITowbar } from "interfaces/towbar";
 import { CartAction, CartActionsTypes } from "interfaces/cart";
-import { IWiringKit } from "interfaces/wiringKit";
 
-export function addItemToCart(item: ITowbar | null | IWiringKit): CartAction {
+export function addItemToCart(item: ITowbar | null): CartAction {
   return { type: CartActionsTypes.ADD_ITEM_TO_CART, payload: item };
 }
 

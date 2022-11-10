@@ -1,17 +1,33 @@
 import React, { FC } from "react";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
+
 import { Header, Navbar } from "components";
+import Home from "./index";
+
 import { wrapper } from "store";
 
-import "antd/dist/antd.css";
-import "../styles/globals.css";
+import "../styles/globals.scss";
+import { useTypedSelector } from "hooks/useTypedSelector";
 
 const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+  const { user } = useTypedSelector((state) => state.user);
+
+  const router = useRouter();
+
+  let allowed = true;
+
+  if (router.pathname.startsWith("/admin") && user?.role !== "ADMIN") {
+    allowed = false;
+  }
+
+  const ComponentToRender = allowed ? Component : Home;
+
   return (
     <>
       <Header />
       <Navbar />
-      <Component {...pageProps} />
+      <ComponentToRender {...pageProps} />
     </>
   );
 };

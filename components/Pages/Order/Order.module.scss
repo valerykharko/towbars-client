@@ -1,0 +1,217 @@
+@import "styles/colors";
+
+.order {
+  h1 {
+  }
+
+  .form {
+    margin-top: 40px;
+
+    &Main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .block {
+        flex: 0 1 32%;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 18px;
+        }
+
+        p {
+          margin-top: 10px;
+          font-style: italic;
+          font-size: 14px;
+          font-family: Monospaced, sans-serif;
+        }
+
+        input {
+          margin-top: 15px;
+          padding: 10px 20px;
+
+          outline: 1px solid $outline_grey;
+
+          font-size: 16px;
+        }
+
+        .error {
+          margin-top: 5px;
+          font-size: 16px;
+          color: red;
+        }
+
+        &Tel {
+          div:nth-child(3) {
+            border: none;
+            border-radius: 0;
+            outline: 1px solid $outline_grey !important;
+          }
+          p {
+            margin-bottom: 15px;
+          }
+          input {
+            width: 100% !important;
+            height: 38px !important;
+            padding: 10px 50px;
+
+            border-radius: 0;
+            border: none;
+            outline: 1px solid $outline_grey !important;
+
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &Submit {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+
+      input {
+        padding: 15px 30px;
+        background-color: $btn;
+        cursor: pointer;
+
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+          background-color: $btn_hover;
+          box-shadow: 0 0 2px 2px $light_grey;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 550px) {
+  .order {
+    h1 {
+      font-size: 20px;
+    }
+
+    .form {
+      margin-top: 20px;
+
+      &Main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .block {
+          flex: 0 1 100%;
+
+          span {
+            font-size: 16px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+
+          input {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &Submit {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+
+        input {
+          padding: 10px 30px;
+          background-color: $btn;
+          cursor: pointer;
+
+          font-size: 16px;
+          font-weight: bold;
+
+          &:hover {
+            background-color: $btn_hover;
+            box-shadow: 0 0 2px 2px $light_grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 550px) and (max-device-width: 600px) {
+  .order {
+    h1 {
+      font-size: 22px;
+    }
+
+    .form {
+      margin-top: 30px;
+
+      &Main {
+        .block {
+          flex: 0 1 47.5%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .order {
+    h1 {
+      font-size: 22px;
+    }
+
+    .form {
+      margin-top: 30px;
+
+      &Main {
+        .block {
+          flex: 0 1 47.5%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 868px) {
+  .order {
+    h1 {
+    }
+
+    .form {
+      margin-top: 30px;
+
+      &Main {
+        .block {
+          flex: 0 1 47.5%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 868px) and (max-device-width: 1280px) {
+  .order {
+    h1 {
+    }
+
+    .form {
+      margin-top: 30px;
+
+      &Main {
+        .block {
+          flex: 0 1 48.5%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (max-device-width: 1600px) {
+}

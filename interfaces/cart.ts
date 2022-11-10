@@ -1,5 +1,4 @@
 import { ITowbar } from "interfaces/towbar";
-import { IWiringKit } from "interfaces/wiringKit";
 
 export interface CartState {
   items: object[];
@@ -17,7 +16,7 @@ export enum CartActionsTypes {
 
 interface AddItemToCart {
   type: CartActionsTypes.ADD_ITEM_TO_CART;
-  payload: ITowbar | null | IWiringKit;
+  payload: ITowbar | null;
 }
 
 interface ClearCart {

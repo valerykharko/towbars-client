@@ -1,49 +1,44 @@
 import React from "react";
+import Image from "next/image";
 
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className={styles.footer}>
-        <div className={styles.left}>
-          <div>
-            <span>О компании</span>
-            <span>Пользовательское соглашение</span>
-            <span>Публичные договоры</span>
-          </div>
-          <div>
-            <span>Политика конфиденциальности</span>
-            <span>Поддержка пользователей</span>
-            <span>Правила возврата</span>
-          </div>
-        </div>
-        <div className={styles.center}>
-          <div>
-            <span>Towbars | Online shop for towbars</span>
-          </div>
-          <div className={styles.icons}>
-            <img src="/static/images/social/vk.png" alt="vk-icon" />
-            <img src="/static/images/social/facebook.png" alt="facebook-icon" />
-            <img src="/static/images/social/twitter.png" alt="twitter-icon" />
-            <img
-              src="/static/images/social/instagram.png"
-              alt="instagram-icon"
+    <footer className={styles.footer}>
+      <div className={styles.left}>
+        <div className={styles.timeBlock}>
+          <div className={styles.imgBlock}>
+            <Image
+              className={styles.clockImg}
+              src="/static/images/footer/clock.png"
+              alt="clock-icon"
+              width={20}
+              height={20}
             />
-            <img src="/static/images/social/telegram.png" alt="telegram-icon" />
+            <span>MSK</span>
           </div>
-          <div>
-            <span>All rights reserved | © Copyright 2020-2022</span>
+          <div className={styles.timeText}>
+            <div>Пн-Пт: 09:00 - 18:00</div>
+            <div>Сб-Вск: 09:00 - 18:00</div>
           </div>
         </div>
-        <div className={styles.right}>
-          <span>ООО "Акей-Систем"</span>
-          <span>
-            Республика Беларусь, г. Минск, тр. Сморговский, д. 9, пом. 118, к.
-            2/37
-          </span>
-          <span>Онлайн-заказы принимаются на сайте круглосуточно (24/7)</span>
+        <div className={styles.copyrightBlock}>
+          <Image
+            src="/static/images/footer/copyright.png"
+            alt="clock-icon"
+            width={10}
+            height={10}
+          />
+          <span>2014-2023 </span>
+          <strong> Купить-фаркоп.москва</strong>
         </div>
+      </div>
+      <div className={styles.right}>
+        <span>
+          * Если Вы не нашли свою модель авто или необходимый товар свяжитесь с
+          нами и наш специалист обязательно Вам поможет
+        </span>
       </div>
     </footer>
   );

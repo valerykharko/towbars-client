@@ -1,44 +1,39 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.menu}>
-      <Link href={"/catalog"}>
-        <div className={styles.menuItem}>
-          <img src="" alt="" />
-          <span>Каталог</span>
+      <Link href="/">
+        <div
+          className={`${styles.menuItem} ${
+            router.pathname === "/" && styles.menuItemActive
+          }`}
+        >
+          <span>Подбор фаркопа</span>
         </div>
       </Link>
-      <Link href={"/manufacturers"}>
-        <div className={styles.menuItem}>
-          <img src="" alt="" />
-          <span>Производители</span>
+      <Link href="/how_make_order">
+        <div
+          className={`${styles.menuItem} ${
+            router.pathname === "/how_make_order" && styles.menuItemActive
+          }`}
+        >
+          <span>Как сделать заказ</span>
         </div>
       </Link>
-      <Link href={"/installation"}>
-        <div className={styles.menuItem}>
-          <img src="" alt="" />
-          <span>Установка</span>
-        </div>
-      </Link>
-      <Link href={"/delivery"}>
-        <div className={styles.menuItem}>
-          <img src="" alt="" />
-          <span>Доставка и оплата</span>
-        </div>
-      </Link>
-      <Link href={"/about"}>
-        <div className={styles.menuItem}>
-          <img src="" alt="" />
-          <span>О нас</span>
-        </div>
-      </Link>
-      <Link href={"/contacts"}>
-        <div className={styles.menuItem}>
-          <img src="" alt="" />
-          <span>Контакты</span>
+      <Link href="/delivery">
+        <div
+          className={`${styles.menuItem} ${
+            router.pathname === "/delivery" && styles.menuItemActive
+          }`}
+        >
+          <span>Доставка</span>
         </div>
       </Link>
     </div>

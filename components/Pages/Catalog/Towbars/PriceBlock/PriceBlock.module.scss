@@ -1,0 +1,165 @@
+@import "styles/colors";
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 26%;
+  height: 400px;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 7px;
+
+  transition: all 0.3s ease-in-out;
+
+  background-color: $white;
+  box-shadow: 0 0 6px 6px $light_grey;
+
+  animation-name: bounce;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+
+  &:hover {
+    box-shadow: 0 0 6px 6px $card_hover;
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .priceCount {
+    span {
+      font-size: 26px;
+      font-weight: bold;
+    }
+  }
+
+  .btnCart {
+    margin: 20px 0 40px 0;
+
+    button {
+      padding: 10px 15px;
+
+      background-color: $btn;
+      outline: 1px solid $outline_grey;
+      box-shadow: 0 0 4px 4px $light_grey;
+
+      cursor: pointer;
+
+      animation-name: light;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+
+      @keyframes light {
+        from {
+          box-shadow: 0 0 6px 6px $light_grey;
+        }
+
+        50% {
+          box-shadow: 0 0 4px 4px $light_grey;
+        }
+
+        to {
+          box-shadow: 0 0 6px 6px $light_grey;
+        }
+      }
+
+      &:hover {
+        background-color: $btn_hover;
+        outline: 1px solid $outline_strong_grey;
+        box-shadow: 0 0 6px 6px $light_grey;
+      }
+
+      span {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .contactBlock {
+      display: flex;
+      align-items: center;
+      width: 48%;
+    }
+  }
+
+  .contactBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 135px;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    outline: 2px solid $outline_grey;
+    box-shadow: 0 0 4px 4px $light_grey;
+
+    cursor: pointer;
+
+    img {
+      margin-right: 7px;
+      width: 30px;
+      height: 30px;
+    }
+
+    span {
+      font-family: "Fredoka One", cursive;
+      font-size: 16px;
+      letter-spacing: 0.8px;
+    }
+  }
+
+  .telBlock {
+    margin-bottom: 10px;
+
+    span {
+      font-family: Roboto, serif;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+      color: $black;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .priceBlock {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .priceBlock {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .priceBlock {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 1280px) and (max-device-width: 1600px) {
+}

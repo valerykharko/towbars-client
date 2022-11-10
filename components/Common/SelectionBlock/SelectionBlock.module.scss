@@ -1,0 +1,228 @@
+@import "styles/colors";
+
+.selectionBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px 20px;
+  background-color: $white;
+
+  .header {
+    .selectionText {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .selectionDescription {
+      display: inline-block;
+      width: 100%;
+      padding: 15px 20px;
+
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  .selection {
+    width: 100%;
+    padding: 0 20px;
+    max-width: 650px;
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+
+        background-color: $btn;
+        border: 1px solid $outline_strong_grey;
+        cursor: pointer;
+
+        span {
+          font-size: 18px;
+          color: $black;
+        }
+
+        .imgArrow {
+          width: 12px;
+        }
+
+        &:disabled {
+          background-color: rgba(245, 245, 245, 0.6);
+          cursor: not-allowed;
+        }
+
+        &:hover {
+          background-color: $btn_hover;
+          box-shadow: 0 0 2px 2px $btn_strong_hover;
+        }
+
+        &:focus {
+          background-color: $btn_hover;
+          box-shadow: 0 0 2px 2px $btn_strong_hover;
+        }
+      }
+    }
+  }
+
+  .onSearchBtnBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+
+    .onSearchBtn {
+      width: 150px;
+      height: 35px;
+      padding: 5px;
+
+      background-color: $btn;
+      outline: 1px solid $black;
+      cursor: pointer;
+
+      span {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 20px;
+        letter-spacing: 0.8px;
+        color: black;
+      }
+
+      &:hover {
+        background-color: $btn_hover;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 600px) {
+  .selectionBlock {
+    margin: 10px 5px;
+    .header {
+      .selectionText {
+        font-size: 18px;
+      }
+
+      .selectionDescription {
+        font-size: 14px;
+      }
+    }
+
+    .selection {
+      padding: 0 10px;
+      max-width: 450px;
+
+      .buttons {
+        button {
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .onSearchBtnBlock {
+      .onSearchBtn {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+  .selectionBlock {
+    margin: 10px 50px;
+    .header {
+      .selectionText {
+        font-size: 22px;
+      }
+    }
+
+    .selection {
+      padding: 0 10px;
+      max-width: 550px;
+
+      .buttons {
+        button {
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .onSearchBtnBlock {
+      .onSearchBtn {
+        span {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1280px) {
+  .selectionBlock {
+    margin: 10px 13%;
+
+    .selection {
+      padding: 0 10px;
+      max-width: 550px;
+
+      .buttons {
+        button {
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .onSearchBtnBlock {
+      .onSearchBtn {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .selectionBlock {
+    margin: 10px 20%;
+
+    .header {
+      .selectionDescription {
+        font-size: 18px;
+      }
+    }
+
+    .onSearchBtnBlock {
+      .onSearchBtn {
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

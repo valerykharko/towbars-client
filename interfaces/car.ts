@@ -1,17 +1,20 @@
 export interface IBrand {
   id: number;
   name: string;
+  visible: boolean;
 }
 
 export interface IModel {
   id: number;
   name: string;
+  visible: boolean;
 }
 
 export interface IGeneration {
   id: number;
   name: string;
   year_of_issue: string;
+  visible: boolean;
 }
 
 export interface IBodyStyle {
@@ -36,33 +39,23 @@ export interface ICar {
 
 export interface CarState {
   brands: Array<IBrand>;
+  brand?: IBrand;
   models: Array<IModel>;
+  model?: IModel;
   generations: Array<IGeneration>;
+  generation?: IGeneration;
   bodyStyles: Array<IBodyStyle>;
-  brandActive: boolean;
-  brandValue: IBrand | undefined;
-  modelActive: boolean;
-  modelValue: IModel | undefined;
-  generationActive: boolean;
-  generationValue: IGeneration | undefined;
-  bodyStyleActive: boolean;
-  bodyStyleValue: IBodyStyle | undefined;
-  car: ICar | undefined;
+  car?: ICar;
 }
 
 export enum CarActionsTypes {
   SET_BRANDS = "SET_BRANDS",
-  SET_MODELS = "SET_MODELS",
-  SET_GENERATIONS = "SET_GENERATIONS",
-  SET_BODY_STYLES = "SET_BODY_STYLES",
   SET_BRAND = "SET_BRAND",
-  SET_BRAND_ACTIVE = "SET_BRAND_ACTIVE",
+  SET_MODELS = "SET_MODELS",
   SET_MODEL = "SET_MODEL",
-  SET_MODEL_ACTIVE = "SET_MODEL_ACTIVE",
+  SET_GENERATIONS = "SET_GENERATIONS",
   SET_GENERATION = "SET_GENERATION",
-  SET_GENERATION_ACTIVE = "SET_GENERATION_ACTIVE",
-  SET_BODY_STYLE = "SET_BODY_STYLE",
-  SET_BODY_STYLE_ACTIVE = "SET_BODY_STYLE_ACTIVE",
+  SET_BODY_STYLES = "SET_BODY_STYLES",
   SET_CAR = "SET_CAR",
 }
 
@@ -70,56 +63,30 @@ interface SetBrands {
   type: CarActionsTypes.SET_BRANDS;
   payload: IBrand[];
 }
+interface SetBrand {
+  type: CarActionsTypes.SET_BRAND;
+  payload: IBrand | undefined;
+}
 interface SetModels {
   type: CarActionsTypes.SET_MODELS;
   payload: IModel[];
+}
+interface SetModel {
+  type: CarActionsTypes.SET_MODEL;
+  payload: IModel | undefined;
 }
 interface SetGenerations {
   type: CarActionsTypes.SET_GENERATIONS;
   payload: IGeneration[];
 }
+interface SetGeneration {
+  type: CarActionsTypes.SET_GENERATION;
+  payload: IGeneration | undefined;
+}
 interface SetBodyStyles {
   type: CarActionsTypes.SET_BODY_STYLES;
   payload: IBodyStyle[];
 }
-
-interface SetBrand {
-  type: CarActionsTypes.SET_BRAND;
-  payload: IBrand;
-}
-interface SetBrandActive {
-  type: CarActionsTypes.SET_BRAND_ACTIVE;
-  payload: boolean;
-}
-
-interface SetModel {
-  type: CarActionsTypes.SET_MODEL;
-  payload: IModel;
-}
-
-interface SetModelActive {
-  type: CarActionsTypes.SET_MODEL_ACTIVE;
-  payload: boolean;
-}
-
-interface SetGeneration {
-  type: CarActionsTypes.SET_GENERATION;
-  payload: IGeneration;
-}
-interface SetGenerationActive {
-  type: CarActionsTypes.SET_GENERATION_ACTIVE;
-  payload: boolean;
-}
-
-interface SetBodyStyle {
-  type: CarActionsTypes.SET_BODY_STYLE;
-  payload: IBodyStyle;
-}
-interface SetBodyStyleActive {
-  type: CarActionsTypes.SET_BODY_STYLE_ACTIVE;
-  payload: boolean;
-}
-
 interface SetCar {
   type: CarActionsTypes.SET_CAR;
   payload: ICar;
@@ -127,15 +94,10 @@ interface SetCar {
 
 export type CarAction =
   | SetBrands
-  | SetModels
-  | SetGenerations
-  | SetBodyStyles
   | SetBrand
-  | SetBrandActive
+  | SetModels
   | SetModel
-  | SetModelActive
+  | SetGenerations
   | SetGeneration
-  | SetGenerationActive
-  | SetBodyStyle
-  | SetBodyStyleActive
+  | SetBodyStyles
   | SetCar;
