@@ -1,12 +1,11 @@
 import React from "react";
 
 import { Container } from "components";
+import {Belarus, Kazachstan, Kirgizja, Russia} from "utils/delivery/countries";
 
 import styles from "./DeliveryBlock.module.scss";
-import { Russia } from "utils/delivery/countries";
 
 const DeliveryBlock = () => {
-  console.log(Russia);
   return (
     <Container>
       <div className={styles.title}>
@@ -66,67 +65,199 @@ const DeliveryBlock = () => {
           </div>
         </div>
         <div className={styles.deliveryBlock}>
-          <div className={styles.header}>
-            <h3>Россия</h3>
-          </div>
           <div className={styles.body}>
-            <div>
-              {Russia.map(
-                (item, index) =>
-                  index < 10 && (
-                    <div className={styles.table}>
-                      <div className={styles.tableLeft}>
-                        <p>{item[0][0]}</p>
-                      </div>
-                      <div className={styles.tableRight}>
-                        {item.map((elem: string) => (
-                          <div className={styles.city}>
-                            <span>{elem}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )
-              )}
+            <div className={styles.header}>
+              <h3>Россия</h3>
             </div>
-            <div>
-              {Russia.map(
-                (item, index) =>
-                  index >= 10 &&
-                  index < 16 && (
-                    <div className={styles.table}>
-                      <div className={styles.tableLeft}>
-                        <p>{item[0][0]}</p>
+            <div className={styles.bodyBlock}>
+              <div>
+                {Russia.map(
+                  (item, index) =>
+                    index < 10 && (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                      <div className={styles.tableRight}>
-                        {item.map((elem: string) => (
-                          <div className={styles.city}>
-                            <span>{elem}</span>
-                          </div>
-                        ))}
+                    )
+                )}
+              </div>
+              <div>
+                {Russia.map(
+                  (item, index) =>
+                    index >= 10 &&
+                    index < 16 && (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )
-              )}
+                    )
+                )}
+              </div>
+              <div>
+                {Russia.map(
+                  (item, index) =>
+                    index >= 16 && (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
             </div>
-            <div>
-              {Russia.map(
-                (item, index) =>
-                  index >= 16 && (
+            <div className={styles.bodyCenter}>
+              <div className={styles.bodyBlock}>
+                <div>
+                  <div className={styles.header}>
+                    <h3>Казахстан</h3>
+                  </div>
+                  <div>
+                    {Kazachstan.map((item) => (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.bodyBlock}>
+                <div>
+                  <div className={styles.header}>
+                    <h3>Киргизия</h3>
+                  </div>
+                  <div>
+                    {Kirgizja.map((item) => (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.bodyBlock}>
+                <div>
+                  <div className={styles.header}>
+                    <h3>Армения</h3>
+                  </div>
+                  <div>
                     <div className={styles.table}>
                       <div className={styles.tableLeft}>
-                        <p>{item[0][0]}</p>
+                        <p>Е</p>
                       </div>
                       <div className={styles.tableRight}>
-                        {item.map((elem: string) => (
-                          <div className={styles.city}>
-                            <span>{elem}</span>
-                          </div>
-                        ))}
+                        <div className={styles.city}>
+                          <span>Ереван</span>
+                        </div>
                       </div>
                     </div>
-                  )
-              )}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.header}>
+              <h3>Беларусь</h3>
+            </div>
+            <div className={styles.bodyBlock}>
+              <div>
+                {Belarus.map(
+                  (item, index) =>
+                    index < 4 && (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
+              <div>
+                {Belarus.map(
+                  (item, index) =>
+                    index >= 4 &&
+                    index < 9 && (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
+              <div>
+                {Belarus.map(
+                  (item, index) =>
+                    index >= 9 && (
+                      <div className={styles.table}>
+                        <div className={styles.tableLeft}>
+                          <p>{item[0][0]}</p>
+                        </div>
+                        <div className={styles.tableRight}>
+                          {item.map((elem: string) => (
+                            <div className={styles.city}>
+                              <span>{elem}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
             </div>
           </div>
         </div>

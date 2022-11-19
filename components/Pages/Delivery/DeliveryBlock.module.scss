@@ -99,58 +99,67 @@
     align-items: center;
     width: 100%;
 
-    .header {
-      h3 {
-        font-size: 22px;
-      }
-    }
-
     .body {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin-top: 20px;
-      gap: 50px;
-
-      .table {
-        flex: 0 1 32%;
+      .header {
         display: flex;
-        width: 100%;
+        justify-content: center;
         margin-bottom: 20px;
-
-        &Left {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid $outline_strong_1_grey;
-          width: 40px;
-          border-right: none;
-          background: $light_grey;
-
-          p {
-            font-size: 20px;
-            font-weight: bold;
-          }
+        h3 {
+          font-size: 22px;
         }
+      }
 
-        &Right {
+      .bodyCenter {
+        display: flex;
+      }
+
+      .bodyBlock {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+        gap: 50px;
+
+        .table {
+          flex: 0 1 32%;
           display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
+          width: 100%;
+          margin-bottom: 20px;
 
-          div:last-child {
-            border-bottom: 1px solid $outline_strong_1_grey;
+          &Left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $outline_strong_1_grey;
+            width: 40px;
+            border-right: none;
+            background: $light_grey;
+
+            p {
+              font-size: 20px;
+              font-weight: bold;
+            }
           }
 
-          .city {
-            padding: 5px 10px;
-            border: 1px solid $outline_strong_1_grey;
-            border-bottom: none;
-            width: 245px;
+          &Right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
 
-            span {
-              font-size: 16px;
+            div:last-child {
+              border-bottom: 1px solid $outline_strong_1_grey;
+            }
+
+            .city {
+              padding: 5px 10px;
+              border: 1px solid $outline_strong_1_grey;
+              border-bottom: none;
+              width: 245px;
+
+              span {
+                font-size: 16px;
+              }
             }
           }
         }
@@ -181,7 +190,7 @@
   }
 }
 
-@media only screen and (min-device-width: 600px) and (max-device-width: 768px) {
+@media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
   .title {
     h1 {
       font-size: 24px;
@@ -196,6 +205,83 @@
   .block {
     h2 {
       font-size: 18px;
+    }
+  }
+
+  .delivery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &Title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+
+      h2 {
+        margin: 20px 0 30px 0;
+        font-size: 26px;
+      }
+
+      .countries {
+        display: flex;
+
+        div:last-child {
+          border-right: none;
+        }
+
+        div {
+          border-right: 1px solid $black;
+          padding-right: 20px;
+          margin-right: 20px;
+
+          h4 {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    &Block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .body {
+        .header {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+
+          h3 {
+            font-size: 22px;
+          }
+        }
+
+        .bodyCenter {
+          display: flex;
+        }
+
+        .bodyBlock {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin-top: 20px;
+          gap: 50px;
+
+          .table {
+            flex: 0 1 100%;
+            display: flex;
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      }
     }
   }
 }

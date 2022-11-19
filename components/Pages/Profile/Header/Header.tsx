@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { useMediaQuery } from "usehooks-ts";
 
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
@@ -13,7 +14,6 @@ import { useTypedSelector } from "hooks/useTypedSelector";
 import { useActions } from "hooks/useActions";
 
 import styles from "./Header.module.scss";
-import { useMediaQuery } from "usehooks-ts";
 
 interface IFormInput {
   firstName: string;
@@ -115,18 +115,22 @@ const Header = () => {
                   {user?.isActivated ? (
                     <div className={styles.idActivated}>
                       <span>Ваш аккаунт успешно активирован</span>
-                      <img
+                      <Image
                         src="/static/images/profile/checked.png"
                         alt="checked-icon"
+                        width={25}
+                        height={25}
                       />
                     </div>
                   ) : (
                     <>
                       <div className={styles.idActivated}>
                         <span>Ваш аккаунт не активирован</span>
-                        <img
+                        <Image
                           src="/static/images/profile/cancel.png"
                           alt="cancel-icon"
+                          width={25}
+                          height={25}
                         />
                       </div>
                     </>
@@ -323,7 +327,9 @@ const Header = () => {
                   ) : (
                     <div className={styles.info}>
                       <p>Номер телефона</p>
-                      <span>+{user?.phoneNumber}</span>
+                      <span>
+                        {user?.phoneNumber && "+" + user?.phoneNumber}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -383,18 +389,22 @@ const Header = () => {
               {user?.isActivated ? (
                 <div className={styles.idActivated}>
                   <span>Ваш аккаунт успешно активирован</span>
-                  <img
+                  <Image
                     src="/static/images/profile/checked.png"
                     alt="checked-icon"
+                    width={25}
+                    height={25}
                   />
                 </div>
               ) : (
                 <>
                   <div className={styles.idActivated}>
                     <span>Ваш аккаунт не активирован</span>
-                    <img
+                    <Image
                       src="/static/images/profile/cancel.png"
                       alt="cancel-icon"
+                      width={25}
+                      height={25}
                     />
                   </div>
                 </>
