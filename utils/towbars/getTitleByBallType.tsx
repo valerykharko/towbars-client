@@ -1,8 +1,16 @@
-const A: Array<string> = ["W5", "W6", "W10", "V"];
+const V: Array<string> = ["V"];
 
-const B: Array<string> = ["С", "C"];
+const C: Array<string> = ["C", "С"];
 
-const C: Array<string> = ["A", "А", "F"];
+const A: Array<string> = ["A", "А"];
+
+const E: Array<string> = ["E", "Е"];
+
+const F: Array<string> = ["F"];
+
+const G: Array<string> = ["G"];
+
+const H: Array<string> = ["H", "Н"];
 
 function contains(arr: string[], elem: string) {
   for (let i = 0; i < arr.length; i++) {
@@ -14,12 +22,20 @@ function contains(arr: string[], elem: string) {
 }
 
 const getTitleByBallType = (type: string) => {
-  return contains(A, type)
+  return contains(V, type)
     ? "Вертикально быстросъёмный фаркоп"
-    : contains(B, type)
-    ? "Горизонтально быстросъёмный фаркоп"
     : contains(C, type)
+    ? "Горизонтально быстросъёмный фаркоп"
+    : contains(A, type)
     ? "Разборный фаркоп"
+    : contains(E, type)
+    ? "Фаркоп под американский квадрат"
+    : contains(F, type)
+    ? "Фланцевый фаркоп"
+    : contains(G, type)
+    ? "Фланцевый фаркоп"
+    : contains(H, type)
+    ? "Цельносварной фаркоп"
     : "";
 };
 

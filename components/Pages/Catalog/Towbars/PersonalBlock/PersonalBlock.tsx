@@ -17,7 +17,6 @@ import { useActions } from "hooks/useActions";
 import { useTypedSelector } from "hooks/useTypedSelector";
 
 import getTitleByBallType from "utils/towbars/getTitleByBallType";
-import getAdvantages from "utils/towbars/getAdvantages";
 
 import styles from "./PersonalBlock.module.scss";
 
@@ -59,96 +58,41 @@ const PersonalBlock = () => {
                 modules={[Lazy, Pagination, Navigation]}
                 scrollbar={{ draggable: true }}
               >
-                {towbar.img.map(
-                  (image, index) =>
-                    index <
-                      getAdvantages(
-                        towbar?.ball_type as string,
-                        towbar?.manufacturer.name as string
-                      ).count && (
-                      <SwiperSlide key={image}>
-                        <Image
-                          className={`${styles.img} swiper-lazy`}
-                          src={process.env.API_URL! + "/" + image}
-                          alt="img"
-                          width={1000}
-                          height={650}
-                        />
-                        <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
-                      </SwiperSlide>
-                    )
-                )}
-
-                {/*<SwiperSlide>*/}
-                {/*  <div className={styles.advantages}>*/}
-                {/*    {getAdvantages(*/}
-                {/*      towbar?.ball_type as string,*/}
-                {/*      towbar?.manufacturer.name as string*/}
-                {/*    ).advantages.map((elem, index) =>*/}
-                {/*      index % 2 === 0 ? (*/}
-                {/*        <div className={styles.advantageBlock}>*/}
-                {/*          <Image*/}
-                {/*            src={*/}
-                {/*              process.env.API_URL! +*/}
-                {/*              "/" +*/}
-                {/*              towbar.img[elem.img - 1]*/}
-                {/*            }*/}
-                {/*            alt={`adv-icon-${index}`}*/}
-                {/*            width={1000}*/}
-                {/*            height={650}*/}
-                {/*          />*/}
-                {/*          <div className={styles.text}>*/}
-                {/*            <span className={styles.title}>{elem.title}</span>*/}
-                {/*            <span className={styles.subTitle}>*/}
-                {/*              {elem.subTitle}*/}
-                {/*            </span>*/}
-                {/*          </div>*/}
-                {/*        </div>*/}
-                {/*      ) : (*/}
-                {/*        <div className={styles.advantageBlock}>*/}
-                {/*          <div className={styles.text}>*/}
-                {/*            <span className={styles.title}>{elem.title}</span>*/}
-                {/*            <span className={styles.subTitle}>*/}
-                {/*              {elem.subTitle}*/}
-                {/*            </span>*/}
-                {/*          </div>*/}
-                {/*          <Image*/}
-                {/*            src={*/}
-                {/*              process.env.API_URL! +*/}
-                {/*              "/" +*/}
-                {/*              towbar.img[elem.img - 1]*/}
-                {/*            }*/}
-                {/*            alt={`adv-icon-${index}`}*/}
-                {/*            width={1000}*/}
-                {/*            height={650}*/}
-                {/*          />*/}
-                {/*        </div>*/}
-                {/*      )*/}
-                {/*    )}*/}
-                {/*  </div>*/}
-                {/*</SwiperSlide>*/}
-
-                {towbar.video_link && towbar.video_link.map((video, index) => (
-                  <SwiperSlide key={video} id={`video${index}`}>
-                    {({ isActive }) => (
-                      <div>
-                        {isActive && (
-                          <div className={styles.videoSlide}>
-                            <video
-                              id={`video${index}`}
-                              src={process.env.API_URL! + "/" + video}
-                              className={`${styles.video} swiper-lazy`}
-                              loop
-                              muted
-                              autoPlay
-                            />
-                            <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
-                          </div>
-                        )}
-                      </div>
-                    )}
+                {towbar.img.map((image) => (
+                  <SwiperSlide key={image}>
+                    <Image
+                      className={`${styles.img} swiper-lazy`}
+                      src={process.env.API_URL! + "/" + image}
+                      alt="img"
+                      width={1000}
+                      height={650}
+                    />
+                    <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
                   </SwiperSlide>
                 ))}
+
+                {towbar.video_link &&
+                  towbar.video_link.map((video, index) => (
+                    <SwiperSlide key={video} id={`video${index}`}>
+                      {({ isActive }) => (
+                        <div>
+                          {isActive && (
+                            <div className={styles.videoSlide}>
+                              <video
+                                id={`video${index}`}
+                                src={process.env.API_URL! + "/" + video}
+                                className={`${styles.video} swiper-lazy`}
+                                loop
+                                muted
+                                autoPlay
+                              />
+                              <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </SwiperSlide>
+                  ))}
               </Swiper>
             </div>
             <TowbarSpecifications towbar={towbar} />

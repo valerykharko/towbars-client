@@ -51,8 +51,6 @@ const Catalog = () => {
                 {"Фаркопы на " +
                   brand?.name +
                   " " +
-                  model?.name +
-                  " " +
                   generation?.name +
                   " " +
                   bodyStyle?.name}
