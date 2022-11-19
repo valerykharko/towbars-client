@@ -128,7 +128,7 @@ const PersonalBlock = () => {
                 {/*  </div>*/}
                 {/*</SwiperSlide>*/}
 
-                {towbar.video_link.map((video, index) => (
+                {towbar.video_link && towbar.video_link.map((video, index) => (
                   <SwiperSlide key={video} id={`video${index}`}>
                     {({ isActive }) => (
                       <div>

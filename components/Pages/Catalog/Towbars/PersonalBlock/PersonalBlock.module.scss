@@ -127,6 +127,14 @@
 
         .carousel {
           width: 100%;
+
+          .videoSlide {
+            height: calc(95vw / 1.54);
+          }
+
+          .video {
+            width: 100%;
+          }
         }
       }
 
@@ -160,6 +168,14 @@
 
         .carousel {
           width: 70%;
+
+          .videoSlide {
+            height: calc(62.5vw / 1.54);
+          }
+
+          .video {
+            width: 100%;
+          }
         }
       }
 
@@ -192,6 +208,14 @@
 
         .carousel {
           width: 70%;
+
+          .videoSlide {
+            height: calc(53.5vw / 1.54);
+          }
+
+          .video {
+            width: 100%;
+          }
         }
       }
 
@@ -216,6 +240,18 @@
 
     .personalBlock {
       width: 100%;
+
+      .mainBlock {
+        .carousel {
+          .videoSlide {
+            height: calc(49vw / 1.54);
+          }
+
+          .video {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

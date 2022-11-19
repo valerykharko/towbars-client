@@ -11,9 +11,8 @@ const Title = ({ towbar }: TowbarTitleProps) => {
   return (
     <div className={styles.title}>
       <h1>
-        Фаркоп на {towbar.auto?.brand?.name} {towbar.auto?.model?.name}{" "}
-        {towbar.auto?.generation?.name} {towbar.auto?.generation?.year_of_issue}{" "}
-        {towbar.auto?.bodyStyle?.name}
+        Фаркоп на {towbar.auto?.brand?.name} {towbar.auto?.generation?.name}{" "}
+        {towbar.auto?.generation?.year_of_issue} {towbar.auto?.bodyStyle?.name}
       </h1>
     </div>
   );
