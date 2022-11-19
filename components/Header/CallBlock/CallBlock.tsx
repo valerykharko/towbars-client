@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./CallBlock.module.scss";
@@ -18,12 +19,12 @@ const CallBlock = ({
     <div className={styles.callBlock}>
       <div className={styles.top}>
         <div className={styles.numberLink}>
-          <a href="tel:+79774415229">
+          <Link href="tel:+79774415229">
             <span>+7 977 441-52-29</span>
-          </a>
+          </Link>
         </div>
         <div className={styles.links}>
-          <a href="viber://chat?number=%2B375291870012">
+          <Link href="viber://chat?number=%2B79774415229">
             <Image
               className={styles.link}
               src="/static/images/header/viber.png"
@@ -32,8 +33,8 @@ const CallBlock = ({
               height={30}
               quality={100}
             />
-          </a>
-          <a href="viber://chat?number=%2B375291870012">
+          </Link>
+          <Link href="https://t.me/+79774415229">
             <Image
               className={styles.link}
               src="/static/images/header/telegram.png"
@@ -42,8 +43,8 @@ const CallBlock = ({
               height={30}
               quality={100}
             />
-          </a>
-          <a href="viber://chat?number=%2B375291870012">
+          </Link>
+          <Link href="https://wa.me/79774415229">
             <Image
               className={styles.link}
               src="/static/images/header/whatsapp.png"
@@ -52,7 +53,7 @@ const CallBlock = ({
               height={30}
               quality={100}
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div ref={makerCallPopupRef} className={styles.callBack}>

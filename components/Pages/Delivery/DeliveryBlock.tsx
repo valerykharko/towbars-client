@@ -1,107 +1,137 @@
 import React from "react";
 
+import { Container } from "components";
+
 import styles from "./DeliveryBlock.module.scss";
+import { Russia } from "utils/delivery/countries";
 
 const DeliveryBlock = () => {
+  console.log(Russia);
   return (
-    <div className={styles.container}>
+    <Container>
+      <div className={styles.title}>
+        <h1>Доставка фаркопа</h1>
+        <strong>
+          Доставка прицепного устройства осуществляется во все города и регионы
+        </strong>
+        <p>
+          Мы предлагаем оптимальные схемы доставки и оказываем комплексный
+          подход, что позволяет сократить стоимость и сроки
+        </p>
+      </div>
+      <div className={styles.block}>
+        <h2>1. Заказ</h2>
+        <p>
+          Оформите заказ через корзину сайта (подробнее в разделе "Как сделать
+          заказ") или связавшись с нами любым удобным для Вас способом. При
+          оформлении заказа наш специалист индивидуально согласует с Вами
+          стоимость, условия оплаты, сроки и способ доставки.
+        </p>
+      </div>
+      <div className={styles.block}>
+        <h2>2. Отгрузка</h2>
+        <p>
+          Заказ доставляется бесплатно до ТК на выбор клиента. ТК осуществляет
+          доставку по указанному Вами адресу (получить заказ Вы можете
+          самостоятельно на пункте выдачи заказов или оформить курьерскую
+          доставку до конкретного адреса). Услуги ТК оплачивает покупатель при
+          получении товара. После сдачи заказа в ТК, Вам направляется информация
+          для отслеживания отправления через сайт ТК.
+        </p>
+        <span>
+          Отслеживать информацию о заказе можно в личном кабинете, при условии
+          оформления заказа онлайн.
+        </span>
+      </div>
+      <div className={styles.line} />
       <div className={styles.delivery}>
-        <div className={styles.delivery__header}>
-          <h1>Доставка</h1>
-          <span>
-            На текущий момент предлагаем Вам следующие варианты доставки:
-            доставка курьером по Минску, самовывоз в Минске, доставка по РБ
-            (курьером, самовывоз, по почте)
-          </span>
+        <div className={styles.deliveryTitle}>
+          <h2>География доставок</h2>
+          <div className={styles.countries}>
+            <div>
+              <h4>Россия</h4>
+            </div>
+            <div>
+              <h4>Казахстан</h4>
+            </div>
+            <div>
+              <h4>Киргизия</h4>
+            </div>
+            <div>
+              <h4>Армения</h4>
+            </div>
+            <div>
+              <h4>Беларусь</h4>
+            </div>
+          </div>
         </div>
-        <div className={styles.delivery__block}>
-          <h2>Доставка курьером по Минску</h2>
-          <ul>
-            <li>Заказ на сумму от 200 рублей - бесплатно</li>
-            <li>Заказ на сумму до 200 рублей - 5 рублей (до МКАД)</li>
-          </ul>
-        </div>
-        <div className={styles.delivery__block}>
-          <h2>Самовывоз в Минске</h2>
-          <ul>
-            <li>со склада на СТО "Красные фонари"</li>
-            <li>со склада на СТО "ЭлектроСистемсГрупп"</li>
-          </ul>
-        </div>
-        <div className={styles.delivery__block}>
-          <h2>Доставка по РБ</h2>
-          <span>
-            По предварительному согласованию с менеджером доставка осуществляется по адресу в
-            нижеуказанных городах:
-          </span>
-          <ul>
-            <li>Брест</li>
-            <li>Гродно</li>
-            <li>Гомель</li>
-            <li>Витебск</li>
-            <li>Могилев</li>
-            <li>Бобруйск</li>
-            <li>Барановичи</li>
-            <li>Борисов</li>
-            <li>Пинск</li>
-          </ul>
-        </div>
-      </div>
-      <div className={styles.payment}>
-        <div className={styles.payment__header}>
-          <h1>Оплата</h1>
-          <span>
-            Цены, указанные на сайте, являются окончательными и не требуют
-            доплат при стандартных условиях поставки. Все налоги включены в
-            стоимость товара.
-          </span>
-          <span>
-            На текущий момент предлагаем Вам следующие варианты оплаты: наличный
-            и безналичный расчет.
-          </span>
-        </div>
-        <div className={styles.payment__cash}>
-          <h2>Наличный расчет</h2>
-          <ul>
-            <li>
-              Наличными денежными средствами Вы можете рассчитаться
-              непосредственно со cпециалистом службы доставки при получении
-              товара. После проверки соответствия заказанного товара и его
-              оплате, специалист отдела доставки обязан выдать кассовый чек.
-            </li>
-            <li>
-              Наличными денежными средствами Вы можете рассчитаться при
-              получении товара в поч-товом отделении, если товар был отправлен
-              наложенным платежом по Республике Беларусь. В этом случае Вы
-              оплачиваете стоимость пересылки товара и 3% от суммы перевода за
-              наложенный платеж (согласно тарифам РУП "Белпочта").
-            </li>
-          </ul>
-        </div>
-        <div className={styles.payment__cashless}>
-          <h2>Безналичный расчет</h2>
-          <ul>
-            <li>
-              Юридические лица могут произвести оплату за товар банковским
-              переводом с расчетного счета.
-            </li>
-            <li>
-              Физические лица могут рассчитаться за товар, перечислив денежные
-              средства на расчетный счет нашей компании через любое банковское
-              отделение Республики Беларусь, используя реквизиты нашей компании.
-            </li>
-          </ul>
-        </div>
-        <div className={styles.payment__requisites}>
-          <h3>Реквизиты ООО "Акей-Систем"</h3>
-          <span>
-            Республика Беларусь, 220068, г. Минск, тр. Сморговский, д. 9, пом.
-            118, к. 2/37
-          </span>
-          <span>УНП 193368286</span>
+        <div className={styles.deliveryBlock}>
+          <div className={styles.header}>
+            <h3>Россия</h3>
+          </div>
+          <div className={styles.body}>
+            <div>
+              {Russia.map(
+                (item, index) =>
+                  index < 10 && (
+                    <div className={styles.table}>
+                      <div className={styles.tableLeft}>
+                        <p>{item[0][0]}</p>
+                      </div>
+                      <div className={styles.tableRight}>
+                        {item.map((elem: string) => (
+                          <div className={styles.city}>
+                            <span>{elem}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
+              )}
+            </div>
+            <div>
+              {Russia.map(
+                (item, index) =>
+                  index >= 10 &&
+                  index < 16 && (
+                    <div className={styles.table}>
+                      <div className={styles.tableLeft}>
+                        <p>{item[0][0]}</p>
+                      </div>
+                      <div className={styles.tableRight}>
+                        {item.map((elem: string) => (
+                          <div className={styles.city}>
+                            <span>{elem}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
+              )}
+            </div>
+            <div>
+              {Russia.map(
+                (item, index) =>
+                  index >= 16 && (
+                    <div className={styles.table}>
+                      <div className={styles.tableLeft}>
+                        <p>{item[0][0]}</p>
+                      </div>
+                      <div className={styles.tableRight}>
+                        {item.map((elem: string) => (
+                          <div className={styles.city}>
+                            <span>{elem}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
+              )}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

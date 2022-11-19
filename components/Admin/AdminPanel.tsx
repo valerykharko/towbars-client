@@ -26,7 +26,7 @@ const AdminPanel = ({ link, children }: AdminPanelProps) => {
             </Link>
           </div>
           <div className={styles.menuItem}>
-            <Link href="/admin-panel/orders">
+            <Link href="/admin-panel/database/orders">
               <span>Заказы</span>
             </Link>
           </div>

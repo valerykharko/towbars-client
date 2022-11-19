@@ -10,13 +10,13 @@ export { default as Container } from "./Common/Container/Container";
 export { default as DropDownList } from "./Common/DropDownList/DropDownList";
 export { default as SelectionBlock } from "./Common/SelectionBlock/SelectionBlock";
 export { default as TreeMenu } from "./Common/TreeMenu/TreeMenu";
+export { default as Notification } from "./Common/Notification/Notification";
 
 export { default as AdminPanel } from "./Admin/AdminPanel";
 export { default as AdminAuto } from "./Admin/Database/Auto/Auto";
 export { default as AdminTowbars } from "./Admin/Database/Towbars/Towbars";
-export { default as AdminUsers } from "./Admin/Database/Users";
-export { default as AdminOrders } from "./Admin/Orders/AdminOrders";
-export { default as AdminOrdersTable } from "./Admin/Orders/OrdersTable/OrdersTable";
+export { default as AdminOrders } from "./Admin/Database/Orders/Orders";
+export { default as AdminUsers } from "./Admin/Database/Users/Users";
 
 export { default as CatalogBlock } from "./Pages/Catalog/Catalog";
 export { default as TowbarsBlock } from "./Pages/Catalog/Towbars/TowbarsBlock";

@@ -9,6 +9,7 @@ import { wrapper } from "store";
 
 import "../styles/globals.scss";
 import { useTypedSelector } from "hooks/useTypedSelector";
+import Notification from "components/Common/Notification/Notification";
 
 const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const { user } = useTypedSelector((state) => state.user);

@@ -1,0 +1,388 @@
+@import "styles/colors";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .header {
+    margin-bottom: 10px;
+    span {
+      font-size: 18px;
+    }
+
+    input {
+      width: 150px;
+      padding: 10px;
+      margin: 0 20px;
+
+      outline: 1px solid $light_grey;
+
+      font-size: 18px;
+    }
+
+    button {
+      padding: 7px 40px;
+      background-color: $btn;
+      outline: 1px solid $outline_grey;
+      cursor: pointer;
+
+      font-size: 16px;
+
+      &:hover {
+        background-color: $btn_hover;
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    border-top: 1px solid $light_grey;
+
+    .order {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      margin-top: 15px;
+
+      &Header {
+        span {
+          font-size: 22px;
+        }
+      }
+
+      .userBlock {
+        flex: 0 1 100%;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 50px;
+
+        .client {
+          strong {
+            font-size: 18px;
+          }
+
+          .clientInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 10px;
+
+            div {
+              margin: 5px 0;
+
+              span {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+
+        .btnSave {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          button {
+            width: 150px;
+            padding: 5px 10px;
+            background-color: $btn;
+            outline: 1px solid $outline_grey;
+            cursor: pointer;
+
+            font-size: 16px;
+
+            &:hover {
+              background-color: $btn_hover;
+            }
+          }
+        }
+
+        .user {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          strong {
+            font-size: 18px;
+          }
+
+          .userInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            margin-top: 10px;
+
+            div {
+              margin: 5px 0;
+
+              span {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      &Body {
+        flex: 0 1 100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .orderItems {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+          border-radius: 20px;
+
+          .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            border-top: 1px solid $light_grey;
+            border-bottom: 1px solid $light_grey;
+
+            button {
+              padding: 5px 20px;
+              margin: 0 20px;
+              background-color: $btn;
+              outline: 1px solid $outline_grey;
+              cursor: pointer;
+
+              font-size: 16px;
+
+              &:hover {
+                background-color: $btn_hover;
+              }
+            }
+
+            .status {
+              span {
+                font-size: 18px;
+              }
+
+              &Labels {
+                position: absolute;
+                margin-left: 60px;
+
+                background-color: $white;
+
+                div {
+                  padding: 15px 15px;
+                  cursor: pointer;
+
+                  &:hover {
+                    background-color: $light_grey;
+                  }
+                }
+              }
+            }
+
+            .shipmentDate {
+              display: flex;
+              align-items: center;
+              p {
+                font-size: 18px;
+              }
+              input {
+                padding: 5px 15px;
+                margin-left: 20px;
+                outline: 1px solid $light_grey;
+
+                font-size: 18px;
+              }
+            }
+          }
+
+          .orderItem {
+            display: flex;
+            flex-direction: column;
+
+            .orderElement {
+              display: flex;
+              align-items: center;
+              margin-bottom: 25px;
+
+              &:last-child {
+                padding-bottom: 25px;
+                border-bottom: 1px solid $light_grey;
+              }
+
+              .position {
+                margin-right: 20px;
+                span {
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+              }
+              .image {
+                width: 100px;
+                height: 100px;
+                margin-right: 20px;
+                cursor: pointer;
+                img {
+                  width: 100px;
+                  height: 100px;
+                  border-radius: 10px;
+                  outline: 1px solid $light_grey;
+                }
+              }
+
+              .name {
+                flex: 0 1 31%;
+                span {
+                  display: inline-block;
+                  margin-bottom: 10px;
+                  font-size: 18px;
+                  font-weight: bold;
+                }
+                p {
+                  font-size: 16px;
+                }
+              }
+
+              .minus {
+                flex: 0 1 7%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                img {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+
+              .count {
+                flex: 0 1 20%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                  font-size: 16px;
+                }
+              }
+
+              .plus {
+                flex: 0 1 7%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                img {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+
+              .price {
+                flex: 0 1 27%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                &1 {
+                  span {
+                    font-size: 16px;
+                  }
+                }
+
+                &2 {
+                  display: flex;
+                  justify-content: center;
+                  margin-top: 20px;
+                  div {
+                    width: 100px;
+                  }
+                  span {
+                    font-size: 16px;
+                  }
+                  input {
+                    width: 100px;
+                    padding: 5px;
+                    margin: 0 10px;
+
+                    outline: 1px solid $light_grey;
+
+                    font-size: 16px;
+                  }
+
+                  button {
+                    padding: 5px 20px;
+                    margin: 0 10px;
+                    background-color: $btn;
+                    outline: 1px solid $outline_grey;
+                    cursor: pointer;
+
+                    font-size: 16px;
+
+                    &:hover {
+                      background-color: $btn_hover;
+                    }
+                  }
+                }
+              }
+
+              .remove {
+                flex: 0 1 4%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+                height: 120px;
+
+                cursor: pointer;
+
+                img {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+            }
+          }
+
+          .otherInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+
+            .totalCount {
+              margin-bottom: 10px;
+              span:nth-child(1) {
+                font-size: 16px;
+              }
+              span:nth-child(2) {
+                font-size: 16px;
+                font-weight: bold;
+              }
+            }
+
+            .totalPrice {
+              span:nth-child(1) {
+                font-size: 16px;
+              }
+              span:nth-child(2) {
+                font-size: 16px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

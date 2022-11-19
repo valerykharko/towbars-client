@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { AdminTowbars } from "components";
 
-const AdminDbTowbarsPage = () => {
+const AdminDBTowbarsPage = () => {
   return (
     <>
       <Head>
@@ -15,4 +15,4 @@ const AdminDbTowbarsPage = () => {
   );
 };
 
-export default AdminDbTowbarsPage;
+export default AdminDBTowbarsPage;

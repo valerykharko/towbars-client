@@ -6,6 +6,7 @@ import getPrice from "utils/towbars/getPrice";
 import { ITowbar } from "interfaces/towbar";
 
 import styles from "./PricePanel.module.scss";
+import Link from "next/link";
 
 interface PricePanelProps {
   towbar: ITowbar;
@@ -21,7 +22,7 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
             <span>{getPrice(towbar.price)}</span>
           </div>
           <div className={styles.call}>
-            <button className={styles.btn}>
+            <Link href="tel:+79774415229" className={styles.btn}>
               <Image
                 src="/static/images/header/tel-icon.png"
                 alt="delivery-icon"
@@ -30,7 +31,7 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
               />
               <span className={styles.btnTextM}>Позвонить</span>
               <span className={styles.btnTextD}>Связаться с нами</span>
-            </button>
+            </Link>
           </div>
         </div>
         <div className={styles.right}>
@@ -43,7 +44,10 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
             </button>
           </div>
           <div className={styles.contacts}>
-            <div className={styles.contactBlock}>
+            <Link
+              href="https://t.me/+79774415229"
+              className={styles.contactBlock}
+            >
               <Image
                 src="/static/images/header/telegram.png"
                 alt="telegram-icon"
@@ -52,8 +56,11 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
                 quality={100}
               />
               <span>Telegram</span>
-            </div>
-            <div className={styles.contactBlock}>
+            </Link>
+            <Link
+              href="https://wa.me/79774415229"
+              className={styles.contactBlock}
+            >
               <Image
                 src="/static/images/header/whatsapp.png"
                 alt="whatsapp-icon"
@@ -62,8 +69,11 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
                 quality={100}
               />
               <span>WhatsApp</span>
-            </div>
-            <div className={styles.contactBlock}>
+            </Link>
+            <Link
+              href="viber://chat?number=%2B79774415229"
+              className={styles.contactBlock}
+            >
               <Image
                 src="/static/images/header/viber.png"
                 alt="viber-icon"
@@ -72,7 +82,7 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
                 quality={100}
               />
               <span>Viber</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

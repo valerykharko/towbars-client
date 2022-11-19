@@ -25,6 +25,15 @@ export default class OrderService {
     return $api.get<IOrder>("/orders/" + orderId);
   }
 
+  static async editBrand(
+    orderId: number,
+    payload: any
+  ): Promise<AxiosResponse<IOrder>> {
+    return $api.patch<IOrder>("/orders/" + orderId, {
+      payload,
+    });
+  }
+
   static async getOrdersByUser(): Promise<AxiosResponse<IOrder[]>> {
     return $api.get<IOrder[]>("/orders/byUser");
   }

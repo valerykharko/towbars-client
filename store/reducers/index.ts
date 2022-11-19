@@ -4,6 +4,7 @@ import { userReducer } from "./userReducer";
 import { towbarReducer } from "./towbarReducer";
 import { cartReducer } from "store/reducers/cartReducer";
 import { orderReducer } from "store/reducers/orderReducer";
+import { notificationReducer } from "store/reducers/notificationReducer";
 
 export const store = combineReducers({
   car: carReducer,
@@ -11,6 +12,7 @@ export const store = combineReducers({
   towbar: towbarReducer,
   cart: cartReducer,
   order: orderReducer,
+  notification: notificationReducer,
 });
 
 export type RootState = ReturnType<typeof store>;

@@ -3,10 +3,26 @@ export default interface IOrder {
   items: any;
   date: string;
   status: string;
-  userData: any;
-  shipment_date: string
+  userData: {
+    surname: string;
+    name: string;
+    patronymic: string;
+    country: string;
+    city: string;
+    telNumber: string;
+  };
+  shipment_date: string;
   totalPrice: number;
   totalCount: number;
+  user: {
+    firstName: string;
+    secondName: string;
+    patronymic: string;
+    country: string;
+    city: string;
+    phoneNumber: string;
+    email: string;
+  };
 }
 
 export interface OrderState {

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 import getPrice from "utils/towbars/getPrice";
@@ -23,7 +24,10 @@ const PriceBlock = ({ towbar, addItemToCart }: PriceBlockProps) => {
           <span>Добавить в корзину</span>
         </button>
       </div>
-      <div className={`${styles.contactBlock} ${styles.telBlock}`}>
+      <Link
+        href="tel:+79774415229"
+        className={`${styles.contactBlock} ${styles.telBlock}`}
+      >
         <Image
           src="/static/images/header/tel-icon.png"
           alt="delivery-icon"
@@ -31,9 +35,9 @@ const PriceBlock = ({ towbar, addItemToCart }: PriceBlockProps) => {
           height={30}
         />
         <span>Связаться с нами</span>
-      </div>
+      </Link>
       <div className={styles.top}>
-        <div className={styles.contactBlock}>
+        <Link href="https://t.me/+79774415229" className={styles.contactBlock}>
           <Image
             src="/static/images/header/telegram.png"
             alt="telegram-icon"
@@ -42,8 +46,8 @@ const PriceBlock = ({ towbar, addItemToCart }: PriceBlockProps) => {
             quality={100}
           />
           <span>Telegram</span>
-        </div>
-        <div className={styles.contactBlock}>
+        </Link>
+        <Link href="https://wa.me/79774415229" className={styles.contactBlock}>
           <Image
             src="/static/images/header/whatsapp.png"
             alt="whatsapp-icon"
@@ -52,8 +56,11 @@ const PriceBlock = ({ towbar, addItemToCart }: PriceBlockProps) => {
             quality={100}
           />
           <span>WhatsApp</span>
-        </div>
-        <div className={styles.contactBlock}>
+        </Link>
+        <Link
+          href="viber://chat?number=%2B79774415229"
+          className={styles.contactBlock}
+        >
           <Image
             src="/static/images/header/viber.png"
             alt="viber-icon"
@@ -62,7 +69,7 @@ const PriceBlock = ({ towbar, addItemToCart }: PriceBlockProps) => {
             quality={100}
           />
           <span>Viber</span>
-        </div>
+        </Link>
       </div>
     </div>
   );

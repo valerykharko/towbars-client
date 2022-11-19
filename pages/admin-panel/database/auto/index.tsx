@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { AdminAuto } from "components";
 
-const AdminDbUsersPage = () => {
+const AdminDBAutoPage = () => {
   return (
     <>
       <Head>
@@ -15,4 +15,4 @@ const AdminDbUsersPage = () => {
   );
 };
 
-export default AdminDbUsersPage;
+export default AdminDBAutoPage;

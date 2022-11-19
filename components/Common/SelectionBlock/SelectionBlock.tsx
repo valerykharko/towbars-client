@@ -23,11 +23,7 @@ const SelectionBlock = () => {
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    brand.name &&
-      model.name &&
-      generation.name &&
-      bodyStyle.name &&
-      setHydrated(true);
+    setHydrated(true);
   }, []);
 
   const buttonRef = useRef<HTMLDivElement>(null);
