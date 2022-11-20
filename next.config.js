@@ -13,6 +13,6 @@ module.exports = {
     API_URL: process.env.API_URL,
   },
   images: {
-    domains: [process.env.NEXT_PUBLIC_SERVER_HOST],
+    domains: [process.env.NEXT_PUBLIC_SERVER_HOST, process.env.NEXT_PUBLIC_SERVER_HOST_ORIGINAL],
   },
 };
