@@ -1,9 +1,10 @@
 import axios from "axios";
+import { Dispatch } from "redux";
 import { API_URL } from "http/index";
 import AuthService from "http/userAPI";
-import IUser, { UserAction, UserActionsTypes } from "interfaces/user";
-import { Dispatch } from "redux";
+import LoggerService from "http/loggerAPI";
 import { AuthResponse } from "http/response/AuthResponse";
+import IUser, { UserAction, UserActionsTypes } from "interfaces/user";
 
 export function setUser(data: IUser | null): UserAction {
   return { type: UserActionsTypes.SET_USER, payload: data };
@@ -104,7 +105,7 @@ export const editUser = (
 export const log = (type: number, payload: any, location: any) => {
   return async () => {
     try {
-      await AuthService.createLog(type, payload, location);
+      await LoggerService.createLog(type, payload, location);
     } catch (e: any) {
       console.log(e);
     }
