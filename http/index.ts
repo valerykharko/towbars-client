@@ -1,8 +1,7 @@
 import axios from "axios";
 import { AuthResponse } from "./response/AuthResponse";
 
-const URL = process.env.NEXT_PUBLIC_CLIENT_URL;
-export const API_URL = `${URL}/api`;
+export const API_URL = `http://localhost/api`;
 
 const $api = axios.create({
   withCredentials: true,
