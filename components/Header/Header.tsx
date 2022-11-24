@@ -17,7 +17,7 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [userLS, setUserLS] = useLocalStorage("user", {});
+  const [userLS, setUserLS] = useLocalStorage<any>("user", {});
 
   const makerCallPopupRef = useRef<HTMLDivElement>();
 
@@ -35,7 +35,7 @@ const Header = () => {
       }
     }
 
-    if (!userLS) {
+    if (!userLS.platform) {
       const getUserInfo = async () => {
         const { data } = await axios.get("https://json.geoiplookup.io/");
 

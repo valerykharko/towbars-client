@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import { IBodyStyle, IBrand, ICar, IGeneration, IModel } from "interfaces/car";
-import $api from "./index";
+import $api from "http/index";
 
 export default class CarService {
   static async getBrands(): Promise<AxiosResponse<IBrand[]>> {
