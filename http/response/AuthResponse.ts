@@ -7,10 +7,10 @@ export interface AuthResponse {
 }
 
 export interface LogsResponse {
-  id: string;
+  id: number;
   type: number;
   value: any;
-  date: Date;
+  date: number;
   user: IUser;
   location: any;
 }
