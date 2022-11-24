@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Router from "next/router";
+import Link from "next/link";
 import Image from "next/image";
+import { useLocalStorage } from "usehooks-ts";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -9,7 +11,6 @@ import { Container } from "components/index";
 import { useActions } from "hooks/useActions";
 
 import styles from "./RegisterForm.module.scss";
-import Link from "next/link";
 
 interface IFormInput {
   email: string;
@@ -18,8 +19,9 @@ interface IFormInput {
 
 const RegisterForm = () => {
   const [type, setType] = useState("password");
+  const [userLS, setUserLS] = useLocalStorage("user", {});
 
-  const { registration } = useActions();
+  const { registration, log } = useActions();
 
   const {
     register,
@@ -29,6 +31,7 @@ const RegisterForm = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     await Promise.all([registration(data.email, data.password)]);
+    log(33, {}, userLS);
     localStorage.getItem("token") && (await Router.push("/"));
   };
 
@@ -101,7 +104,7 @@ const RegisterForm = () => {
               <div>
                 <input type="submit" value="Зарегистрироваться" />
               </div>
-              <Link href="/auth/login">
+              <Link href="/auth/login" onClick={() => log(30, {}, userLS)}>
                 <div className={styles.other}>
                   <span>Войти</span>
                 </div>

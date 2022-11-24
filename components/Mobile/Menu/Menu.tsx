@@ -3,6 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { useLocalStorage } from "usehooks-ts";
+
+import { useActions } from "hooks/useActions";
+
 import styles from "./Menu.module.scss";
 
 interface MenuProps {
@@ -10,6 +14,10 @@ interface MenuProps {
 }
 
 const Menu = ({ setMenuMobile }: MenuProps) => {
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+
+  const { log } = useActions();
+
   const router = useRouter();
 
   return (
@@ -36,7 +44,7 @@ const Menu = ({ setMenuMobile }: MenuProps) => {
           </div>
         </div>
         <div className={styles.menuList}>
-          <Link href="/">
+          <Link href="/" onClick={() => log(5, {}, userLS)}>
             <div
               className={`${styles.menuItem} ${
                 router.pathname === "/" && styles.menuItemActive
@@ -54,7 +62,7 @@ const Menu = ({ setMenuMobile }: MenuProps) => {
               <span className={styles.menuItemText}>Подбор фаркопа</span>
             </div>
           </Link>
-          <Link href="/how_make_order">
+          <Link href="/how_make_order" onClick={() => log(6, {}, userLS)}>
             <div
               className={`${styles.menuItem} ${
                 router.pathname === "/how_make_order" && styles.menuItemActive
@@ -72,7 +80,7 @@ const Menu = ({ setMenuMobile }: MenuProps) => {
               <span className={styles.menuItemText}>Как сделать заказ</span>
             </div>
           </Link>
-          <Link href="/delivery">
+          <Link href="/delivery" onClick={() => log(7, {}, userLS)}>
             <div
               className={`${styles.menuItem} ${
                 router.pathname === "/delivery" && styles.menuItemActive

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocalStorage } from "usehooks-ts";
 
 import {
   CallBackOrder,
@@ -8,7 +9,9 @@ import {
   MenuMobile,
   SearchInputHeader,
 } from "components";
+
 import { useTypedSelector } from "hooks/useTypedSelector";
+import { useActions } from "hooks/useActions";
 
 import styles from "./Header.module.scss";
 
@@ -24,6 +27,10 @@ const Header = ({
   isPopupOpen,
 }: HeaderProps) => {
   const [menuMobile, setMenuMobile] = useState(false);
+
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+
+  const { log } = useActions();
 
   const { isAuth, user } = useTypedSelector((state) => state.user);
   const { items, totalCount } = useTypedSelector((state) => state.cart);
@@ -62,7 +69,7 @@ const Header = ({
             </div>
           </Link>
         ) : (
-          <Link href="/auth/login">
+          <Link href="/auth/login" onClick={() => log(30, {}, userLS)}>
             <div className={styles.block}>
               <Image
                 src="/static/images/header/login.png"
@@ -74,7 +81,7 @@ const Header = ({
             </div>
           </Link>
         )}
-        <Link href="/cart">
+        <Link href="/cart" onClick={() => log(40, {}, userLS)}>
           <div className={styles.block}>
             {Object.keys(items).length === 0 ? (
               <>

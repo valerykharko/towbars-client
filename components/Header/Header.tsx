@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocalStorage } from "usehooks-ts";
+import axios from "axios";
 
 import {
   CallBlock,
@@ -15,13 +17,14 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [userLS, setUserLS] = useLocalStorage("user", {});
 
   const makerCallPopupRef = useRef<HTMLDivElement>();
 
   const { isAuth, user } = useTypedSelector((state) => state.user);
   const { items, totalCount } = useTypedSelector((state) => state.cart);
 
-  const { fetchBrands, checkAuth } = useActions();
+  const { fetchBrands, checkAuth, log } = useActions();
 
   useEffect(() => {
     fetchBrands();
@@ -30,6 +33,36 @@ const Header = () => {
       if (localStorage.getItem("token")) {
         await checkAuth();
       }
+    }
+
+    if (!userLS) {
+      const getUserInfo = async () => {
+        const { data } = await axios.get("https://json.geoiplookup.io/");
+
+        return {
+          ip: data.ip,
+          latitude: data.latitude,
+          longitude: data.longitude,
+          country: data.country_name,
+          region: data.region,
+          timezone: data.timezone_name,
+          appCodeName: navigator.appCodeName,
+          appName: navigator.appName,
+          userAgent: navigator.userAgent,
+          // @ts-ignore
+          platform: navigator.userAgentData.platform,
+          // @ts-ignore
+          mobile: navigator.userAgentData.mobile,
+          width: window.screen.width,
+          height: window.screen.height,
+          availWidth: window.screen.availWidth,
+          availHeight: window.screen.availHeight,
+        };
+      };
+
+      getUserInfo().then((payload: any) => {
+        setUserLS(payload);
+      });
     }
 
     checkFullAuth();
@@ -44,7 +77,7 @@ const Header = () => {
           isPopupOpen={isPopupOpen}
         />
         <div className={styles.desktop}>
-          <Link href="/">
+          <Link href="/" onClick={() => log(5, {}, userLS)}>
             <div className={styles.leftBlock}>
               <Image
                 className={styles.logo}
@@ -82,7 +115,7 @@ const Header = () => {
                   </div>
                 </Link>
               ) : (
-                <Link href="/auth/login">
+                <Link href="/auth/login" onClick={() => log(30, {}, userLS)}>
                   <div className={styles.tab}>
                     <Image
                       src="/static/images/header/login.png"
@@ -94,7 +127,7 @@ const Header = () => {
                   </div>
                 </Link>
               )}
-              <Link href="/cart">
+              <Link href="/cart" onClick={() => log(40, {}, userLS)}>
                 <div className={styles.tab}>
                   {Object.keys(items).length === 0 ? (
                     <>

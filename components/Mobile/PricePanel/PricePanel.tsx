@@ -1,12 +1,15 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { useLocalStorage } from "usehooks-ts";
+
+import { useActions } from "hooks/useActions";
 
 import getPrice from "utils/towbars/getPrice";
 
 import { ITowbar } from "interfaces/towbar";
 
 import styles from "./PricePanel.module.scss";
-import Link from "next/link";
 
 interface PricePanelProps {
   towbar: ITowbar;
@@ -14,6 +17,10 @@ interface PricePanelProps {
 }
 
 const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+
+  const { log } = useActions();
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -22,7 +29,13 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
             <span>{getPrice(towbar.price)}</span>
           </div>
           <div className={styles.call}>
-            <Link href="tel:+79774415229" className={styles.btn}>
+            <Link
+              href="tel:+79774415229"
+              className={styles.btn}
+              onClick={() =>
+                log(13, { towbar: towbar, auto: towbar.auto }, userLS)
+              }
+            >
               <Image
                 src="/static/images/header/tel-icon.png"
                 alt="delivery-icon"
@@ -37,7 +50,10 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
         <div className={styles.right}>
           <div
             className={styles.addToCart}
-            onClick={() => addItemToCart(towbar)}
+            onClick={() => {
+              log(45, { towbar: towbar, auto: towbar.auto }, userLS);
+              addItemToCart(towbar);
+            }}
           >
             <button>
               <span>Добавить в корзину</span>
@@ -47,6 +63,9 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
             <Link
               href="https://t.me/+79774415229"
               className={styles.contactBlock}
+              onClick={() =>
+                log(21, { towbar: towbar, auto: towbar.auto }, userLS)
+              }
             >
               <Image
                 src="/static/images/header/telegram.png"
@@ -60,6 +79,9 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
             <Link
               href="https://wa.me/79774415229"
               className={styles.contactBlock}
+              onClick={() =>
+                log(23, { towbar: towbar, auto: towbar.auto }, userLS)
+              }
             >
               <Image
                 src="/static/images/header/whatsapp.png"
@@ -73,6 +95,9 @@ const PricePanel = ({ towbar, addItemToCart }: PricePanelProps) => {
             <Link
               href="viber://chat?number=%2B79774415229"
               className={styles.contactBlock}
+              onClick={() =>
+                log(22, { towbar: towbar, auto: towbar.auto }, userLS)
+              }
             >
               <Image
                 src="/static/images/header/viber.png"

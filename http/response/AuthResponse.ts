@@ -5,3 +5,12 @@ export interface AuthResponse {
   refreshToken: string;
   user: IUser;
 }
+
+export interface LogsResponse {
+  id: string;
+  type: number;
+  value: any;
+  date: Date;
+  user: IUser;
+  location: any;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useLocalStorage } from "usehooks-ts";
+import { useActions } from "hooks/useActions";
 
 import styles from "./CallBlock.module.scss";
 
@@ -15,6 +17,10 @@ const CallBlock = ({
   isPopupOpen,
   setIsPopupOpen,
 }: CallBlockProps) => {
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+
+  const { log } = useActions();
+
   return (
     <div className={styles.callBlock}>
       <div className={styles.top}>
@@ -24,7 +30,10 @@ const CallBlock = ({
           </Link>
         </div>
         <div className={styles.links}>
-          <Link href="viber://chat?number=%2B79774415229">
+          <Link
+            href="viber://chat?number=%2B79774415229"
+            onClick={() => log(16, {}, userLS)}
+          >
             <Image
               className={styles.link}
               src="/static/images/header/viber.png"
@@ -34,7 +43,10 @@ const CallBlock = ({
               quality={100}
             />
           </Link>
-          <Link href="https://t.me/+79774415229">
+          <Link
+            href="https://t.me/+79774415229"
+            onClick={() => log(15, {}, userLS)}
+          >
             <Image
               className={styles.link}
               src="/static/images/header/telegram.png"
@@ -44,7 +56,10 @@ const CallBlock = ({
               quality={100}
             />
           </Link>
-          <Link href="https://wa.me/79774415229">
+          <Link
+            href="https://wa.me/79774415229"
+            onClick={() => log(17, {}, userLS)}
+          >
             <Image
               className={styles.link}
               src="/static/images/header/whatsapp.png"
@@ -57,7 +72,12 @@ const CallBlock = ({
         </div>
       </div>
       <div ref={makerCallPopupRef} className={styles.callBack}>
-        <button onClick={() => setIsPopupOpen(!isPopupOpen)}>
+        <button
+          onClick={() => {
+            log(10, {}, userLS);
+            setIsPopupOpen(!isPopupOpen);
+          }}
+        >
           <div className={styles.telIcon}>
             <Image
               src="/static/images/header/tel-icon.png"

@@ -2,6 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+import { useLocalStorage } from "usehooks-ts";
+
+import { useActions } from "hooks/useActions";
+
 import styles from "./CallBackOrder.module.scss";
 
 interface CallBackOrderProps {
@@ -9,6 +13,10 @@ interface CallBackOrderProps {
 }
 
 const CallBackOrder = ({ setIsPopupOpen }: CallBackOrderProps) => {
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+
+  const { log } = useActions();
+
   const { pathname } = useRouter();
 
   return (
@@ -16,7 +24,10 @@ const CallBackOrder = ({ setIsPopupOpen }: CallBackOrderProps) => {
       {pathname !== "/catalog/towbars/[id]" && (
         <div
           className={styles.callBackOrderBlock}
-          onClick={() => setIsPopupOpen(true)}
+          onClick={() => {
+            log(11, {}, userLS);
+            setIsPopupOpen(true);
+          }}
         >
           <div className={styles.callBackImage}>
             <Image

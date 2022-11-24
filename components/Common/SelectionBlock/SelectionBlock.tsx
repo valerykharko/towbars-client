@@ -6,6 +6,7 @@ import { useLocalStorage } from "usehooks-ts";
 import { DropDownList } from "components";
 
 import styles from "./SelectionBlock.module.scss";
+import { useActions } from "hooks/useActions";
 
 const SelectionBlock = () => {
   const [dropDownList, setActiveDropDownList] = useState(false);
@@ -41,7 +42,22 @@ const SelectionBlock = () => {
     document.body.addEventListener("mousedown", handleOutSideClick);
   }, []);
 
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+  const { log } = useActions();
+
   const onButtonClick = () => {
+    log(
+      1,
+      {
+        auto: {
+          brand: brand,
+          model: model,
+          generation: generation,
+          bodyStyle: bodyStyle,
+        },
+      },
+      userLS
+    );
     brand && model && generation && bodyStyle && Router.push("/catalog");
   };
 

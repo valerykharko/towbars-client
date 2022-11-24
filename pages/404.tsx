@@ -14,7 +14,7 @@ const Page404 = () => {
   return (
     <>
       <Head>
-        <title>Page 404</title>
+        <title>Страница не найдена</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

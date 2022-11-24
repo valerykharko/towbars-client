@@ -100,3 +100,13 @@ export const editUser = (
     }
   };
 };
+
+export const log = (type: number, payload: any, location: any) => {
+  return async () => {
+    try {
+      await AuthService.createLog(type, payload, location);
+    } catch (e: any) {
+      console.log(e);
+    }
+  };
+};

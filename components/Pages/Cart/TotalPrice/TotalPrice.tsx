@@ -1,14 +1,15 @@
 import React from "react";
 import Router from "next/router";
+import { useLocalStorage } from "usehooks-ts";
 
 import { Notification } from "components";
 
 import { useTypedSelector } from "hooks/useTypedSelector";
+import { useActions } from "hooks/useActions";
 
 import getPrice from "utils/towbars/getPrice";
 
 import styles from "./TotalPrice.module.scss";
-import { useActions } from "hooks/useActions";
 
 interface TotalPriceProps {
   totalCount: number;
@@ -16,13 +17,27 @@ interface TotalPriceProps {
 }
 
 const TotalPrice = ({ totalCount, totalPrice }: TotalPriceProps) => {
-  const { user } = useTypedSelector((state) => state.user);
+  const [userLS, setUserLS] = useLocalStorage("user", {});
 
+  const { user } = useTypedSelector((state) => state.user);
   const { isActive } = useTypedSelector((state) => state.notification);
-  const { setNotificationActive } = useActions();
+  const { items } = useTypedSelector((state) => state.cart);
+
+  const { setNotificationActive, log } = useActions();
 
   const onMakeOrder = () => {
     if (user?.id) {
+      log(
+        41,
+        {
+          cart: {
+            items: items,
+            totalCount: totalCount,
+            totalPrice: totalPrice,
+          },
+        },
+        userLS
+      );
       Router.push("/order");
     } else {
       setNotificationActive(true);

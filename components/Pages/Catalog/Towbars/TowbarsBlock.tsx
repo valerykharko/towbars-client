@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useLocalStorage } from "usehooks-ts";
 
 import { useTypedSelector } from "hooks/useTypedSelector";
 import { useActions } from "hooks/useActions";
@@ -13,9 +14,12 @@ import { ITowbar } from "interfaces/towbar";
 import styles from "./TowbarsBlock.module.scss";
 
 const TowbarsBlock = () => {
+  const [userLS, setUserLS] = useLocalStorage("user", {});
+
+  const { car } = useTypedSelector((state) => state.car);
   const { towbars } = useTypedSelector((state) => state.towbar);
 
-  const { addItemToCart } = useActions();
+  const { addItemToCart, log } = useActions();
 
   const router = useRouter();
 
@@ -32,7 +36,10 @@ const TowbarsBlock = () => {
             <div
               key={towbar.id}
               className={styles.towbar}
-              onClick={() => router.push(`/catalog/towbars/${towbar.id}`)}
+              onClick={() => {
+                log(2, { towbar: towbar, auto: towbar.auto }, userLS);
+                router.push(`/catalog/towbars/${towbar.id}`);
+              }}
             >
               <div className={styles.top}>
                 <Image
@@ -54,7 +61,12 @@ const TowbarsBlock = () => {
               </div>
 
               <div className={styles.bottom}>
-                <button onClick={(event) => onAddItemToCart(event, towbar)}>
+                <button
+                  onClick={(event) => {
+                    log(44, { towbar: towbar, auto: car }, userLS);
+                    onAddItemToCart(event, towbar);
+                  }}
+                >
                   <span>В корзину</span>
                 </button>
               </div>

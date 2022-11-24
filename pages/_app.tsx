@@ -5,11 +5,11 @@ import { useRouter } from "next/router";
 import { Header, Navbar } from "components";
 import Home from "./index";
 
+import { useTypedSelector } from "hooks/useTypedSelector";
+
 import { wrapper } from "store";
 
 import "../styles/globals.scss";
-import { useTypedSelector } from "hooks/useTypedSelector";
-import Notification from "components/Common/Notification/Notification";
 
 const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   const { user } = useTypedSelector((state) => state.user);

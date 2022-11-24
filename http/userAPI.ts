@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import { AuthResponse } from "http/response/AuthResponse";
+import { AuthResponse, LogsResponse } from "http/response/AuthResponse";
 import $api from "./index";
 import IUser from "interfaces/user";
 
@@ -38,5 +38,17 @@ export default class AuthService {
       city,
       phoneNumber,
     });
+  }
+
+  static async createLog(
+    type: number,
+    payload: any,
+    location: any
+  ): Promise<AxiosResponse> {
+    return $api.post("/auth/logs", { type, payload, location });
+  }
+
+  static async getLogs(): Promise<AxiosResponse> {
+    return $api.get<LogsResponse>("/auth/logs");
   }
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Router from "next/router";
+import { useLocalStorage } from "usehooks-ts";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -19,8 +20,9 @@ interface IFormInput {
 
 const LoginForm = () => {
   const [type, setType] = useState("password");
+  const [userLS, setUserLS] = useLocalStorage("user", {});
 
-  const { login } = useActions();
+  const { login, log } = useActions();
 
   const {
     register,
@@ -30,6 +32,7 @@ const LoginForm = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     await Promise.all([login(data.email, data.password)]);
+    log(31, {}, userLS);
     localStorage.getItem("token") && (await Router.push("/"));
   };
 
@@ -102,7 +105,7 @@ const LoginForm = () => {
               <div>
                 <input type="submit" value="Войти" />
               </div>
-              <Link href="/auth/registration">
+              <Link href="/auth/registration" onClick={() => log(32, {}, userLS)}>
                 <div className={styles.other}>
                   <span>Зарегистрироваться</span>
                 </div>

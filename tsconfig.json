@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,38 +15,15 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "components/*": [
-        "components/*"
-      ],
-      "hooks/*": [
-        "hooks/*"
-      ],
-      "http/*": [
-        "http/*"
-      ],
-      "interfaces/*": [
-        "interfaces/*"
-      ],
-      "store/*": [
-        "store/*"
-      ],
-      "utils/*": [
-        "utils/*"
-      ]
+      "components/*": ["components/*"],
+      "hooks/*": ["hooks/*"],
+      "http/*": ["http/*"],
+      "interfaces/*": ["interfaces/*"],
+      "store/*": ["store/*"],
+      "utils/*": ["utils/*"]
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "./store/reducers/cartReducer",
-    "./components/AdminPanel/Catalog/db",
-    "./components/Admin/Statistics/Charts/Charts",
-    "components/Admin/Statistics/Charts/Charts",
-    "components/Pages/Cart/CartBlock"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
